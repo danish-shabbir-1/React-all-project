@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body{
+  background-color: rgb(47, 45, 45);
+  color: aliceblue;
+}
+
+.App-header{
+  width: auto;
+  height: 200px;
+  border: 2px solid rgb(19, 82, 82);
+  border-radius: 20px;
+  /* border-top-right-radius: 0px; */
+}
+
+li{
+  list-style: none;
+  text-align: center;
+  padding: 10px 2px;
+}
+
+li input{
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
