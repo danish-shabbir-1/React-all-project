@@ -30,7 +30,7 @@ function App() {
       .then((res) => res.json())
       .then((res) => setQuestions(res));
   }
-  console.log(questions);
+  // console.log(questions);
 
   const isLastQuestoin = currentIndex === questions.length - 1;
 
