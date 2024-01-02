@@ -1,5 +1,6 @@
 /////////// all import here /////////////
 import { useEffect, useState } from "react";
+import fbPost from './Components/FbPost/index'
 
 function App() {
   /////////// all state here /////////////
@@ -17,7 +18,7 @@ console.log(product);
     getProduct();
   },[]);
 
-  // console.log(product);
+  console.log(product);
 
   if(!product?.length) {
 return <div>Loading</div>
@@ -28,7 +29,7 @@ return <div>Loading</div>
       <div>
         <h1>FBN CLONE</h1>
        {product.map((item) =>  {
-        return <h1>{item.product?.brand}</h1>
+        return <fbPost product={item} />
        })}
         
       </div>
