@@ -1,0 +1,39 @@
+
+.container{
+    border: 1px solid rgb(38, 36, 36);
+    width: 40%!important;
+    /* position: relative;
+    left: 0%; */
+    overflow: hidden;
+    margin: 10px 0px;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+.container {
+    width: 40%!important;
+}
+
+.container .fbContainer{
+    display: flex;
+    align-items: center;
+}
+
+.container .fbContainer .Prf-name{
+padding: 0px 10px;
+}
+
+.container .fbContainer .prfImage{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(20, 19, 19);
+}
+
+.container .fb-images-lib{
+    /* width: 300px!important; */
+}
+
+.height-two {
+    width: 0%;
+    padding-top: 0%;
+}

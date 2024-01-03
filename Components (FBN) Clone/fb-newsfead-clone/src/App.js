@@ -1,6 +1,6 @@
 /////////// all import here /////////////
+import FbPost from "./Components/FbPost";
 import { useEffect, useState } from "react";
-import fbPost from './Components/FbPost/index'
 
 function App() {
   /////////// all state here /////////////
@@ -10,28 +10,26 @@ function App() {
 
   const getProduct = () => {
     fetch("https://dummyjson.com/products")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then((res) => setProduct(res.products));
   };
-console.log(product);
   useEffect(() => {
     getProduct();
-  },[]);
+  }, []);
+
+  if (!product?.length) {
+    return <div>Loading</div>;
+  }
 
   console.log(product);
 
-  if(!product?.length) {
-return <div>Loading</div>
-  }
-
   return (
-    <div className="App">
+    <div className="Appp">
       <div>
-        <h1>FBN CLONE</h1>
-       {product.map((item) =>  {
-        return <fbPost product={item} />
-       })}
-        
+        {product.map((item) => {
+          return (<FbPost product={item} />
+          )
+        })}
       </div>
     </div>
   );
