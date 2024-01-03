@@ -1,10 +1,16 @@
+body{
+    background-color: rgb(23, 22, 22);
+}
 
-.container{
+
+.container-one{
     border: 1px solid rgb(38, 36, 36);
+    background-color: rgb(29, 27, 27);
     width: 40%!important;
-    /* position: relative;
-    left: 0%; */
+    position: relative;
+    left: 30%;
     overflow: hidden;
+    color: white;
     margin: 10px 0px;
     border-radius: 10px;
     padding: 10px 10px;
@@ -13,26 +19,33 @@
     width: 40%!important;
 }
 
-.container .fbContainer{
+.container-one .fbContainer{
     display: flex;
     align-items: center;
 }
 
-.container .fbContainer .Prf-name{
+.container-one .fbContainer .Prf-name{
 padding: 0px 10px;
 }
 
-.container .fbContainer .prfImage{
+.container-one .fbContainer .prfImage{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid rgb(20, 19, 19);
+    border: 2px solid rgb(154, 150, 150);
 }
 
-.container .fb-images-lib{
-    /* width: 300px!important; */
+.container-one .Description p{
+    padding: 0px 15px;
 }
 
+.container-one .likes{
+    height: 40px;
+    width: auto;
+    border: 1px solid white;
+    margin: 0px 15px;
+    border-radius: 5px;
+}
 .height-two {
     width: 0%;
     padding-top: 0%;
