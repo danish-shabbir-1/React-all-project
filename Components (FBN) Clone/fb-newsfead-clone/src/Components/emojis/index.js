@@ -3,11 +3,12 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faThumbsUp, faFaceAngry, faSadTear, faLaugh } from "@fortawesome/free-solid-svg-icons";
 
+const emojeeee = { faHeart, faThumbsUp, faFaceAngry, faSadTear, faLaugh }
 
-const Emoji = ({emoji}) => {
-    const [isHoverd, setIsHoverd] = useState(false)
+function Emoji ()  {
+
     return (
-        <FontAwesomeIcon icon={emoji} />   
+        <FontAwesomeIcon icon={emojeeee.faHeart} />   
     )
 }
 

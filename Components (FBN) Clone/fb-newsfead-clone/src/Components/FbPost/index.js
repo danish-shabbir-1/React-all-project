@@ -5,14 +5,22 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Emoji from "../Emojis";
 
 function fbPost(props) {
 
 let [like, setLike] = useState(false)
 
+const [isHoverd, setIsHoverd] = useState(false)
+
+    function mouseHover() {
+        setIsHoverd(true)
+    }
+
 function likeFunction() {
   setLike(!like)
 }
+
 
   return (
     <div className="container-one">
@@ -36,7 +44,8 @@ function likeFunction() {
         />
       </div>
       <div className="likes">
-      <FontAwesomeIcon onClick={likeFunction} className={like?'liked-icon':'like-icon'} icon={faThumbsUp} />
+      <FontAwesomeIcon onMouseOver={mouseHover} onClick={likeFunction} className={like?'liked-icon':'like-icon'} icon={faThumbsUp} />
+        {isHoverd?<Emoji />:''}
       <FontAwesomeIcon className="comment-icon" icon={ faComment } style={{color: "#ffffff",}} />
       <FontAwesomeIcon className="comment-icon" icon={ faShare } style={{color: "#ffffff",}} />
       </div>
