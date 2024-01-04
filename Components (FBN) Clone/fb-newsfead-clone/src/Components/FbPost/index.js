@@ -1,26 +1,44 @@
 import "./index.css";
 import FbImageLibrary from "react-fb-image-grid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function fbPost(props) {
+
+let [like, setLike] = useState(false)
+
+function likeFunction() {
+  setLike(!like)
+}
+
   return (
     <div className="container-one">
       <div className="fbContainer">
         <img className="prfImage" src={props.product.thumbnail} />
-        <h3 className="Prf-name">{props.product.title}</h3>
+        <h5 className="Prf-name">{props.product.title}</h5>
       </div>
+        <h6>posted ago</h6>
       <br />
       <div className="Description">
-        {" "}
+        
         <p>{props.product.description}</p>
+        <li> Brand - {props.product.brand}</li>
+        <li> Category - {props.product.category}</li>
+        <li>Price - ${props.product.price}</li>
       </div>
       <div>
         <FbImageLibrary
           className="fb-images-lib"
           images={props.product.images}
-        />{" "}
+        />
       </div>
       <div className="likes">
-      {/* <i class="fa-regular fa-thumbs-up" style="color: #ffffff;"></i> */}
+      <FontAwesomeIcon onClick={likeFunction} className={like?'liked-icon':'like-icon'} icon={faThumbsUp} />
+      <FontAwesomeIcon className="comment-icon" icon={ faComment } style={{color: "#ffffff",}} />
+      <FontAwesomeIcon className="comment-icon" icon={ faShare } style={{color: "#ffffff",}} />
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 /////////// all import here /////////////
 import FbPost from "./Components/FbPost";
 import { useEffect, useState } from "react";
-
 function App() {
   /////////// all state here /////////////
   const [product, setProduct] = useState([]);

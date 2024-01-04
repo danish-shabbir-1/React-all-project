@@ -1,27 +1,56 @@
 body{
-    background-color: rgb(23, 22, 22);
+    background-color: rgb(49, 46, 46)!important;
 }
 
 
 .container-one{
-    border: 1px solid rgb(38, 36, 36);
-    background-color: rgb(29, 27, 27);
-    width: 40%!important;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(24, 23, 23);
+    width: 25%!important;
     position: relative;
-    left: 30%;
+    left: 40%;
     overflow: hidden;
     color: white;
     margin: 10px 0px;
     border-radius: 10px;
     padding: 10px 10px;
 }
+
+.container-one h6{
+    padding: 0px 67px;
+    margin-top: -15px;
+}
+
 .container {
     width: 40%!important;
+}
+
+.border {
+    border: 1px solid rgb(147, 141, 141)!important;
+    border-radius: 6px;
+    margin: 2px 0px!important;
+}
+
+.container-one .Description li{
+    list-style: none;
+    padding: 0px 15px;
+}
+
+.liked-icon{
+    color: blue;
+    font-size: 25px;
+    transition: all ease-in .2s;
+}
+
+.like-icon{
+    color: aliceblue;
+    font-size: 25px;
 }
 
 .container-one .fbContainer{
     display: flex;
     align-items: center;
+    margin: 0px 5px;
 }
 
 .container-one .fbContainer .Prf-name{
@@ -36,16 +65,32 @@ padding: 0px 10px;
 }
 
 .container-one .Description p{
-    padding: 0px 15px;
+    padding: 0px 10px;
 }
 
 .container-one .likes{
     height: 40px;
     width: auto;
-    border: 1px solid white;
+    border-top: 1px solid white;
     margin: 0px 15px;
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+.container-one .likes .like-icon{
+    text-align: center;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.container-one .likes .comment-icon{
+    text-align: center;
+    font-size: 25px;
+    text-align: center;
+    color: gray;
+    cursor: pointer;
+}
+
 .height-two {
     width: 0%;
     padding-top: 0%;
