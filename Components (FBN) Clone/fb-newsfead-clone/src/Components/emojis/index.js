@@ -8,7 +8,9 @@ const emojeeee = { faHeart, faThumbsUp, faFaceAngry, faSadTear, faLaugh }
 function Emoji ()  {
 
     return (
-        <FontAwesomeIcon icon={emojeeee.faHeart} />   
+       <div> 
+        
+       </div> 
     )
 }
 
