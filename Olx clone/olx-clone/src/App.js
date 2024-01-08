@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [Products, setProducts] = useState([])
+  const [product, setProducts] = useState([])
 
   useEffect(() => {
     getAllProducts();
@@ -14,17 +14,25 @@ function App() {
   const getAllProducts = () => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then(res => setProducts(res));
+      .then(res => setProducts(res.products));
   };
-console.log(Products);
+
+  console.log(product);
+
+  if(!product.length){
+    return <div>
+      loading
+    </div>
+  }
+
   return (
     <div className="App">
   <Navbar />
-  {/* {Products.map(item => {
-    
-  })} */}
+  {product.map(item => {
+    return <Card product={item} /> 
+    })}
     </div>
-  );
+  )
 }
 
 export default App;
