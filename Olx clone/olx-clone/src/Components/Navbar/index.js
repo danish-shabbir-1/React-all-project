@@ -1,11 +1,13 @@
 import React from "react";
+import OlxLogo from './../../Olx Logo2.png'
+import './../cards/style.css'
 
 const navbar = () => {
   return (
     <div>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-dark container navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <img src={OlxLogo} className="logo"/>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,12 +15,15 @@ const navbar = () => {
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          Select Location
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Pakistan</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Sindh</a></li>
+            <li><a class="dropdown-item" href="#">Punjab</a></li>
+            <li><a class="dropdown-item" href="#">KPK</a></li>
+            <li><a class="dropdown-item" href="#">Balochistan</a></li>
           </ul>
         </li>
       </ul>

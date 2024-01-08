@@ -10,11 +10,13 @@ color: aliceblue;
 
 .main-card .card {
   width: 300px !important;
-  height: 330px !important;
+  height: 400px !important;
   margin: 20px 30px;
   border: 1px solid black;
   border-radius: 20px;
   overflow: hidden;
+  overflow-y: scroll;
+  padding: 5px;
 }
 
 .main-card .card .thumnail1 {
@@ -26,8 +28,45 @@ color: aliceblue;
   border-radius: 30px;
   padding: 5px 0px;
 }
+.main-card .card .card-body {
+margin: 0px!important;
+padding: 0px!important;
+}
+.main-card .card .card-body h1,h2,h3,h4,h5,h6,p {
+margin: 0px!important;
+padding: 1px 10px!important;
+text-align: left;
+}
+
+.main-card .card .card-body .price{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.main-card .card .card-body .title{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.main-card .card .card-body .catagery{
+    font-size: 14px;
+    font-weight: 700;
+}
+.main-card .card .card-body .description{
+    font-size: 14px;
+    font-weight: 700;
+}
 
 .main-card {
   display: flex !important;
   flex-wrap: wrap !important;
+}
+
+.logo{
+    width: 150px;
+    height: 80px;
+}
+
+.container{
+background-color: rgb(34, 34, 34);
 }
