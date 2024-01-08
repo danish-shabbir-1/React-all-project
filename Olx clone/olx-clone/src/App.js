@@ -1,6 +1,7 @@
 import Navbar from './Components/Navbar';
 import Card from './Components/cards';
 import './App.css';
+import './Components/cards/style.css'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -28,9 +29,12 @@ function App() {
   return (
     <div className="App">
   <Navbar />
+  <div className='main-container'>
   {product.map(item => {
     return <Card product={item} /> 
     })}
+  </div>
+
     </div>
   )
 }
