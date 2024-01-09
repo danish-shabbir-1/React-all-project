@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Card from "../Components/main-cards";
-import ShowCardDetail from "../Components/Show Card";
+import ShowSelectedItem from "../Components/selectItem";
 
 const router = createBrowserRouter([
   {
@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/item/:id",
-    element: <ShowCardDetail />,
+    element: <ShowSelectedItem />,
   },
 ]);
 
