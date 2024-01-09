@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./../cards/style.css";
+import Image from "./../../5-star-rating-review-star-transparent-free-png.webp";
 
 function SelectItem() {
   const [product, setProduct] = useState();
@@ -26,9 +27,21 @@ function SelectItem() {
       </div>
       {/* /////// side card ////////// */}
       <div class="card selected-card2">
-        <div class="card-body">
+        <div class="profile-items">
           <img className="profile" src={product?.thumbnail} />
-          <h6>{product?.brand }</h6>
+          <h6 className="profile-name">{product?.brand}</h6>
+        </div>
+        <div className="card-detail">
+          <p className="time">posted ago</p>
+          <p className="Price">Price - ${product?.price}</p>
+          <p>Brand - {product?.brand}</p>
+          <p>Category - {product?.category}</p>
+          <p>Title - {product?.title}</p>
+          <p>{product?.description}</p>
+          <div className="rewiew-section">
+            <img className="rewiew" src={Image} />
+            <p>{product?.rating}</p>
+          </div>
         </div>
       </div>
     </div>

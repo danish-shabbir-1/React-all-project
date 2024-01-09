@@ -1,7 +1,8 @@
 import React from "react";
 import "./style.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Image from "./../../5-star-rating-review-star-transparent-free-png.webp"
+
 
 const Card = (props) => {
   let navigate = useNavigate();
@@ -18,7 +19,10 @@ const Card = (props) => {
           <p className="title">Title : {props.product.title}</p>
           <p className="catagery">category : {props.product.category}</p>
           <h6 className="description">{props.product.description}</h6>
-          <p>{props.product.rating}</p>
+          <div className="rh-home">
+            <img className="rh" src={Image} />
+            <p>{props.product?.rating}</p>
+          </div>
         </div>
         <div></div>
       </div>

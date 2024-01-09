@@ -1,6 +1,6 @@
-body{
-background-color: rgb(34, 34, 34)!important;
-color: aliceblue;
+body {
+  background-color: rgb(34, 34, 34) !important;
+  color: aliceblue;
 }
 .main-container {
   display: flex;
@@ -17,7 +17,7 @@ color: aliceblue;
   background-color: rgb(97, 99, 100);
   overflow: hidden;
   /* overflow-y: scroll; */
-  max-height: 600px!important;
+  max-height: 600px !important;
   padding: 5px;
 }
 
@@ -31,32 +31,48 @@ color: aliceblue;
   padding: 5px 0px;
 }
 .main-card .card .card-body {
-margin: 0px!important;
-padding: 0px!important;
+  margin: 0px !important;
+  padding: 0px !important;
 }
-.main-card .card .card-body h1,h2,h3,h4,h5,h6,p {
-margin: 0px!important;
-padding: 1px 10px!important;
-text-align: left;
-}
-
-.main-card .card .card-body .price{
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.main-card .card .card-body .title{
-    font-size: 14px;
-    font-weight: 700;
+.main-card .card .card-body h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px !important;
+  padding: 1px 10px !important;
+  text-align: left;
 }
 
-.main-card .card .card-body .catagery{
-    font-size: 14px;
-    font-weight: 700;
+.main-card .card .card-body .price {
+  font-size: 18px;
+  font-weight: 700;
 }
-.main-card .card .card-body .description{
-    font-size: 14px;
-    font-weight: 700;
+.main-card .card .card-body .rh-home {
+ display: flex;
+}
+
+.main-card .card .card-body .rh {
+  height: 35%;
+  width: 35%;
+  margin-top: -18px;
+}
+
+
+.main-card .card .card-body .title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.main-card .card .card-body .catagery {
+  font-size: 14px;
+  font-weight: 700;
+}
+.main-card .card .card-body .description {
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .main-card {
@@ -64,51 +80,55 @@ text-align: left;
   flex-wrap: wrap !important;
 }
 
-.logo{
-    width: 150px;
-    height: 80px;
+.logo {
+  width: 150px;
+  height: 80px;
 }
 
-.container{
-background-color: rgb(34, 34, 34);
+.container {
+  background-color: rgb(34, 34, 34);
 }
 
-nav .container-fluid form input{
+nav .container-fluid form input {
   width: 700px;
   background-color: rgb(202, 198, 193);
   margin-left: 60px;
 }
 
-nav .container-fluid form button{
+nav .container-fluid form button {
   border-color: rgb(202, 198, 193);
   color: rgb(202, 198, 193);
   width: 150px;
 }
-nav .container-fluid form button:hover{
+nav .container-fluid form button:hover {
   border-color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
   background-color: #212529;
 }
 
-nav .container-fluid .navbar-nav{
-  margin-left: 40px!important;
+nav .container-fluid .navbar-nav {
+  margin-left: 40px !important;
 }
 
 /* ////////////////////////////// selected item css here ///////////////////////////////////// */
 
-.card-container{
+.card-container {
   display: flex;
+margin-top: 100px;
+/* margin-left: 150px; */
+justify-content: space-around;
+
 }
-.card-selected{
-  width: 600px!important;
-  height: 400px!important;
+.card-selected {
+  width: 600px !important;
+  height: 400px !important;
   background: transparent;
   border: 1px solid white;
 }
 
-.card-selected .card-body1 img{
-  width: 580px!important;
-  height: 380px!important;
+.card-selected .card-body1 img {
+  width: 580px !important;
+  height: 380px !important;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -116,16 +136,18 @@ nav .container-fluid .navbar-nav{
   border-radius: 10px;
 }
 
-.card-container .selected-card2{
+.card-container .selected-card2 {
   width: 300px;
-  height: 400px;
+  height: auto;
   background: transparent;
   border: 1px solid white;
   color: white;
-  text-align: left!important;
+  text-align: left !important;
+  padding: 10px 15px;
+  margin-left: -500px!important;
 }
 
-.card-container .selected-card2 .profile{
+.card-container .selected-card2 .profile {
   width: 60px;
   height: 60px;
   background: transparent;
@@ -133,13 +155,27 @@ nav .container-fluid .navbar-nav{
   border-radius: 50%;
 }
 
-
-
-
-
-
-
-
-
+.card-container .selected-card2 .profile-items{
+  display: flex;
+}
+.card-container .selected-card2 .profile-items .profile-name{
+padding-top: 12px!important;
+}
+.card-container .selected-card2 .card-detail .time{
+margin-top: -30px!important;
+margin-left: 60px!important;
+font-size: 10px;
+}
+.card-container .selected-card2 .card-detail .Price{
+padding-top: 30px!important;
+}
+.card-container .selected-card2 .card-detail .rewiew-section .rewiew{
+height: 35%;
+width: 35%;
+margin-top: -18px;
+}
+.card-container .selected-card2 .card-detail .rewiew-section{
+display: flex;
+}
 
 /* ////////////////////////////// selected item css here ///////////////////////////////////// */
