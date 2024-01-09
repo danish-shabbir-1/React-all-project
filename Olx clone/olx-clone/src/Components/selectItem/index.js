@@ -1,11 +1,10 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./../cards/style.css";
 
 function SelectItem() {
-  
   const [product, setProduct] = useState();
   const { id } = useParams();
-
 
   useEffect(() => {
     getAllProducts();
@@ -19,17 +18,21 @@ function SelectItem() {
 
   console.log("single item", product);
   return (
-    <div class="row">
-      <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
-          <div class="card-body1">
-            <img src={product?.thumbnail} />
-            <h5 class="card-title">{product?.brand}</h5>
-          </div>
+    <div className="card-container">
+      <div className="card card-selected">
+        <div className="card-body1">
+          <img src={product?.thumbnail} />
+        </div>
+      </div>
+      {/* /////// side card ////////// */}
+      <div class="card selected-card2">
+        <div class="card-body">
+          <img className="profile" src={product?.thumbnail} />
+          <h6>{product?.brand }</h6>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default SelectItem;
