@@ -20,11 +20,23 @@ function SelectItem() {
   console.log("single item", product);
   return (
     <div className="card-container">
-      <div className="card card-selected">
-        <div className="card-body1">
-          <img src={product?.thumbnail} />
-        </div>
-      </div>
+     <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    {product?.images.map((item) => {
+      return (<div class="carousel-item">
+      <img src={item}  class="d-block w-100" alt="..." />
+    </div>)
+    })}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
       {/* /////// side card ////////// */}
       <div class="card selected-card2">
         <div class="profile-items">

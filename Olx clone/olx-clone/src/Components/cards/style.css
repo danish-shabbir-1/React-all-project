@@ -179,3 +179,57 @@ display: flex;
 }
 
 /* ////////////////////////////// selected item css here ///////////////////////////////////// */
+
+/* /////////////////////////////// all catogerirs here ////////////////////////////////// */
+
+
+.card-catogeries{
+  /* border: 1px solid white; */
+  height: auto;
+  width: 1200px;
+  border-radius: 10px;
+  background-color: transparent;
+  margin: 50px auto;
+}
+
+.card-catogeries .card-body-catogries .catog{
+  width: 140px!important;
+  height: 120px!important;
+margin-top: 30px;
+cursor: pointer;
+text-align: center;
+margin-left: 10px;
+}
+
+.card-catogeries .card-body-catogries .catog img{
+  width: 70px;
+  height: 70px;
+}
+
+.card-catogeries .card-body-catogries{
+display: flex;
+flex-wrap: wrap;
+margin: 10px;
+}
+.card-catogeries .card-body-catogries .catog p{
+ text-align: center;
+ /* width: 120px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////////////////// all catogerirs here ////////////////////////////////// */
