@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./../cards/style.css";
 import Image from "./../../5-star-rating-review-star-transparent-free-png.webp";
+import ImageSlider from '../ImageSlider'
 
 function SelectItem() {
   const [product, setProduct] = useState();
@@ -22,11 +23,7 @@ function SelectItem() {
     <div className="card-container">
      <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
-    {product?.images.map((item) => {
-      return (<div class="carousel-item">
-      <img src={item}  class="d-block w-100" alt="..." />
-    </div>)
-    })}
+    <ImageSlider images={product?.images}/>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

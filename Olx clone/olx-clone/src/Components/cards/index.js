@@ -3,7 +3,6 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 import Image from "./../../5-star-rating-review-star-transparent-free-png.webp"
 
-
 const Card = (props) => {
   let navigate = useNavigate();
   return (
