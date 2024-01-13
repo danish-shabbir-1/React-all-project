@@ -5,7 +5,6 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import Emoji from "../Emojis";
 
 function fbPost(props) {
   let [like, setLike] = useState(false);
@@ -47,7 +46,6 @@ function fbPost(props) {
           className={like ? "liked-icon" : "like-icon"}
           icon={faThumbsUp}
         />
-        {isHoverd ? <Emoji /> : ""}
         <FontAwesomeIcon
           className="comment-icon"
           icon={faComment}
