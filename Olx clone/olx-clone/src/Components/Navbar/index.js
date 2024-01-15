@@ -23,9 +23,9 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const pageChange = () => {
-    navigate('/Register');
-  };
+  // const pageChange = () => {
+  //   navigate('/Register');
+  // };
 
 
   return (
@@ -98,7 +98,7 @@ const Navbar = () => {
               <button class="btn btn-outline-success" type="submit">
                 Search
               </button>
-            <button onClick={() => pageChange()}>Login</button>
+            <button onClick={() => navigate('/Register')}>Login</button>
             </form>
           </div>
         </div>

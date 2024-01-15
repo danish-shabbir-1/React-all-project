@@ -1,8 +1,13 @@
 import React from 'react'
+import './../cards/style.css'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+
+const navigate = useNavigate('/Login')
+
   return (
-    <div>
+    <div className='signup-container'>
       
 
       <input type='text' placeholder='First Name' />
@@ -10,6 +15,8 @@ const Register = () => {
       <input type='text' placeholder='email' />
       <input type='text' placeholder='Passward' />
       <input type='text' placeholder='Re-Type Passward' />
+      <button>SignUp</button>
+      <p onClick={() => }> Login</p>
     </div>
   )
 }

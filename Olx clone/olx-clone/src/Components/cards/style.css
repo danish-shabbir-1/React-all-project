@@ -233,3 +233,52 @@ margin: 10px;
 
 
 /* /////////////////////////////// all catogerirs here ////////////////////////////////// */
+
+
+
+
+
+
+
+/* /////////////////// signup ///////////////////////// */
+
+.signup-container{
+  border: 1px solid white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: auto;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10%;
+  padding: 40px auto;
+}
+.signup-container input{
+  border: 1px solid rgb(95, 93, 93);
+  display: block;
+  width: 90%;
+  background: transparent;
+  margin: 20px auto;
+  color: beige;
+  padding: 0px 10px;
+  height: 35px;
+  border-radius: 5px;
+}
+.signup-container input:hover{
+  border-color: #114fd5;
+}
+.signup-container button{
+  border: 1px solid rgb(44, 44, 44);
+  display: block;
+  width: 90%;
+  color: rgb(255, 255, 255);
+  margin: 20px auto;
+  height: 35px;
+  background-color: #1a59e2;
+  border-radius: 5px;
+}
+
+.signup-container p {
+  text-align: center;
+}
