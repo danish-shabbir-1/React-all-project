@@ -16,7 +16,10 @@ import FAshin from "./../../fashion.png";
 import Book from "./../../book sport.png";
 import Kids from "./../../kids.png";
 
+
+
 const navbar = () => {
+
   return (
     <div>
       <nav class="navbar navbar-dark container navbar-expand-lg bg-dark">
@@ -87,7 +90,7 @@ const navbar = () => {
               <button class="btn btn-outline-success" type="submit">
                 Search
               </button>
-            <button >Login</button>
+            <button>Login</button>
             </form>
           </div>
         </div>
