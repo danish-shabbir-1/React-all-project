@@ -15,10 +15,18 @@ import Ferniter from "./../../ferniture.png";
 import FAshin from "./../../fashion.png";
 import Book from "./../../book sport.png";
 import Kids from "./../../kids.png";
+import { useNavigate } from "react-router-dom";
 
 
 
-const navbar = () => {
+const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const pageChange = () => {
+    navigate('/Register');
+  };
+
 
   return (
     <div>
@@ -90,7 +98,7 @@ const navbar = () => {
               <button class="btn btn-outline-success" type="submit">
                 Search
               </button>
-            <button>Login</button>
+            <button onClick={() => pageChange()}>Login</button>
             </form>
           </div>
         </div>
@@ -159,4 +167,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
