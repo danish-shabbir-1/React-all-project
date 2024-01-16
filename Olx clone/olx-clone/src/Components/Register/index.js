@@ -1,24 +1,33 @@
-import React from 'react'
-import './../cards/style.css'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import "./../cards/style.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate("/Login");
 
-const navigate = useNavigate('/Login')
+  const [name, setName] = useState()
+  const [lastName, setLastName] = useState()
+  const [email, setEmail] = useState()
+  const [Pass, setPass] = useState()
+
+  const signup = () => {
+    try {
+      
+    } catch (e) {
+     alert(e.massage)
+    }
+  }
 
   return (
-    <div className='signup-container'>
-      
-
-      <input type='text' placeholder='First Name' />
-      <input type='text' placeholder='Last Name' />
-      <input type='text' placeholder='email' />
-      <input type='text' placeholder='Passward' />
-      <input type='text' placeholder='Re-Type Passward' />
+    <div className="signup-container">
+      <input onChange={(e) => setName(e.target.value)} type="text" placeholder="First Name" />
+      <input onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" />
+      <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="email" />
+      <input onChange={(e) => setPass(e.target.value)} type="text" placeholder="Passward" />
       <button>SignUp</button>
-      <p onClick={() => navigate('/Login')}> Login</p>
+      <p onClick={() => navigate("/Login")}> Login</p>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
