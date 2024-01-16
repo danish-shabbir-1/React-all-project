@@ -18,15 +18,12 @@ import Kids from "./../../kids.png";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Logout } from "../Firebase/index";
 
 
 const Navbar = () => {
 
   const navigate = useNavigate();
-
-  // const pageChange = () => {
-  //   navigate('/Register');
-  // };
 
 
   return (
@@ -101,6 +98,7 @@ const Navbar = () => {
               </button>
              <span onClick={() => navigate('/Register')} className="Login-icon"> <FontAwesomeIcon  icon={faUser} style={{color: "#ffffff",}} /></span>
              <button className="sale-btn">Sale</button>
+             <button onClick={Logout}>LogOut</button>
             </form>
           </div>
         </div>

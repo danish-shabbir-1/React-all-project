@@ -3,6 +3,7 @@ import "./../cards/style.css";
 import { useNavigate } from "react-router-dom";
 import { register } from "../Firebase/index";
 
+
 const Register = () => {
   const navigate = useNavigate("/Login");
 
