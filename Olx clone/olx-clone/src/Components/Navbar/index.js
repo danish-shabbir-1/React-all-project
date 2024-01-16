@@ -16,7 +16,8 @@ import FAshin from "./../../fashion.png";
 import Book from "./../../book sport.png";
 import Kids from "./../../kids.png";
 import { useNavigate } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 const Navbar = () => {
@@ -98,7 +99,8 @@ const Navbar = () => {
               <button class="btn btn-outline-success" type="submit">
                 Search
               </button>
-            <button onClick={() => navigate('/Register')}>Login</button>
+             <span onClick={() => navigate('/Register')} className="Login-icon"> <FontAwesomeIcon  icon={faUser} style={{color: "#ffffff",}} /></span>
+             <button className="sale-btn">Sale</button>
             </form>
           </div>
         </div>

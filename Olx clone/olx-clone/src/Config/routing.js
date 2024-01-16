@@ -3,7 +3,7 @@ import Card from "../Components/main-cards";
 import ShowSelectedItem from "../Components/selectItem";
 import Register from "../Components/Register";
 import Navbar from "../Components/Navbar";
-import Login
+import Login from './../Components/login/login'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/Login",
     element: <Login />,
+  },
+  {
+    path: "/Register",
+    element: <Register />
   }
 ]);
 

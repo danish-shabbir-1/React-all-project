@@ -16,7 +16,7 @@ const navigate = useNavigate('/Login')
       <input type='text' placeholder='Passward' />
       <input type='text' placeholder='Re-Type Passward' />
       <button>SignUp</button>
-      <p onClick={() => }> Login</p>
+      <p onClick={() => navigate('/Login')}> Login</p>
     </div>
   )
 }

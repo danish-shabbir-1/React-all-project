@@ -90,7 +90,7 @@ p {
 }
 
 nav .container-fluid form input {
-  width: 700px;
+  width: 500px;
   background-color: rgb(202, 198, 193);
   margin-left: 60px;
 }
@@ -104,6 +104,19 @@ nav .container-fluid form button:hover {
   border-color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
   background-color: #212529;
+}
+nav .container-fluid form .Login-icon {
+font-size: 30px;  
+margin: auto 50px;
+cursor: pointer;
+}
+nav .container-fluid form .sale-btn {
+cursor: pointer;
+color: white;
+background: transparent;
+border: 3px solid #114fd5;
+border-radius: 30px;
+padding: 5px 0px;
 }
 
 nav .container-fluid .navbar-nav {
@@ -252,7 +265,7 @@ margin: 10px;
   text-align: center;
   border-radius: 10px;
   margin-top: 10%;
-  padding: 40px auto;
+  padding: 10px 0px;
 }
 .signup-container input{
   border: 1px solid rgb(95, 93, 93);
@@ -281,4 +294,5 @@ margin: 10px;
 
 .signup-container p {
   text-align: center;
+  cursor: pointer;
 }
