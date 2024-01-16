@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth , createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore , doc , setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXbKcDqIUIaRliJB8l3L1nBrcEUS0yX0M",
@@ -15,3 +16,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
+
+
+export async function register (userInfo) {
+const { name , lastName , email , Pass} = userInfo
+const {user} = await createUserWithEmailAndPassword(auth , email , Pass);
+const userData = await setDoc(doc(db,'userInfo',user.uid),{
+  name,lastName, email})
+  return userData.data();
+
+}
