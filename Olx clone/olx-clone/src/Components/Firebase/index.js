@@ -2,8 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut } from "firebase/auth";
 import { getFirestore , doc , setDoc  } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
-import Register from "../Register";
+// import { useNavigate } from "react-router-dom";
+// import Register from "../Register";
 
 
 const firebaseConfig = {
@@ -57,16 +57,16 @@ export function UserLogin (userInfo) {
 //     navigate('/logOut')
 //   }
 // });
+//   const navigate = useNavigate()
+
+// export function Logout () {
 
 
-export function Logout () {
 
-  const navigate = useNavigate()
-
-  signOut(auth).then(() => {
-    alert('Logout User')
-    navigate(<Register />)
-  }).catch((e) => {
-    alert(e.massage)
-  });
-}
+//   signOut(auth).then(() => {
+//     alert('Logout User')
+//     navigate(<Register />)
+//   }).catch((e) => {
+//     alert(e.massage)
+//   });
+// }

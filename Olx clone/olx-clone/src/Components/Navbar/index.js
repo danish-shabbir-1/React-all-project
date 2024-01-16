@@ -98,7 +98,7 @@ const Navbar = () => {
               </button>
              <span onClick={() => navigate('/Register')} className="Login-icon"> <FontAwesomeIcon  icon={faUser} style={{color: "#ffffff",}} /></span>
              <button className="sale-btn">Sale</button>
-             <button onClick={Logout}>LogOut</button>
+             {/* <button onClick={Logout}>LogOut</button> */}
             </form>
           </div>
         </div>
