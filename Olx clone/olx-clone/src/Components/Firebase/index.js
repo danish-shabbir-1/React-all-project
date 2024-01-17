@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut } from "firebase/auth";
-import { getFirestore , doc , setDoc ,collection, addDoc } from "firebase/firestore";
+import { getFirestore , doc , setDoc ,collection, addDoc , getDocs } from "firebase/firestore";
 // import { useNavigate } from "react-router-dom";
 // import Register from "../Register";
 
@@ -80,4 +80,12 @@ export async function AddSalePost(addInfoResponse) {
     Image: image
   });
   console.log("Document written with ID: ", docRef.id);
+}
+
+export async function GetAllProducts() {
+  const querySnapshot = await getDocs(collection(db, "AddInfo"));
+querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  console.log(doc.id, " => ", doc.data());
+});
 }
