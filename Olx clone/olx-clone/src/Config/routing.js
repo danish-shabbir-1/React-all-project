@@ -4,6 +4,7 @@ import ShowSelectedItem from "../Components/selectItem";
 import Register from "../Components/Register";
 import Navbar from "../Components/Navbar";
 import Login from './../Components/login/login'
+import AddItem from "../Components/Add Item";
 
 const router = createBrowserRouter([
   {
@@ -32,10 +33,10 @@ const router = createBrowserRouter([
     path: "/Register",
     element: <Register />
   },
-  // {
-  //   path: "/logoutuser",
-  //   element: <Login />
-  // }
+  {
+    path: "/liveAdd",
+    element: <AddItem />
+  }
 ]);
 
 function Router() {

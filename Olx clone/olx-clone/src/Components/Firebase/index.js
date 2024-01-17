@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut } from "firebase/auth";
-import { getFirestore , doc , setDoc  } from "firebase/firestore";
+import { getFirestore , doc , setDoc ,collection, addDoc } from "firebase/firestore";
 // import { useNavigate } from "react-router-dom";
 // import Register from "../Register";
 
@@ -70,3 +70,14 @@ export function UserLogin (userInfo) {
 //     alert(e.massage)
 //   });
 // }
+
+export async function AddSalePost(addInfoResponse) {
+  const { title , description , price , image} = addInfoResponse
+  const docRef = await addDoc(collection(db, "AddInfo"), {
+    Title: title,
+    Description: description,
+    Price: price,
+    Image: image
+  });
+  console.log("Document written with ID: ", docRef.id);
+}
