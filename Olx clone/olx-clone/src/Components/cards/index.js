@@ -1,30 +1,31 @@
 import React from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import Image from "./../../5-star-rating-review-star-transparent-free-png.webp"
+import { useState } from "react";
+import GetDataa from "../GetDocs";
+import { GetAllProducts } from "../Firebase";
 
-const Card = (props) => {
+
+const Card = () => {
   let navigate = useNavigate();
+
+
+  const [displayProduct, setDisplayProduct] = useState();
+  async function fetchAllData() {
+    try {
+      const products = await GetAllProducts();
+      setDisplayProduct(products);
+      // console.log(displayProduct);
+    } catch (e) {
+      alert(e.massage);
+    }
+  }
+
+  fetchAllData();
+
   return (
-    <div className="main-card" onClick={() => navigate(`item/${props.product.id}`)}>
-      <div className="card">
-        <img
-          src={props.product.thumbnail}
-          className="thumnail1 card-img-top"
-          alt="..."
-        />
-        <div className="card-body">
-          <h5 className="price">Price - ${props.product.price}</h5>
-          <p className="title">Title : {props.product.title}</p>
-          <p className="catagery">category : {props.product.category}</p>
-          <h6 className="description">{props.product.description}</h6>
-          <div className="rh-home">
-            <img className="rh" src={Image} />
-            <p>{props.product?.rating}</p>
-          </div>
-        </div>
-        <div></div>
-      </div>
+    <div className="main-card">
+      <GetDataa products={displayProduct} />
     </div>
   );
 };

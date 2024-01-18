@@ -5,14 +5,14 @@ import Register from "../Components/Register";
 import Navbar from "../Components/Navbar";
 import Login from './../Components/login/login'
 import AddItem from "../Components/Add Item";
-import GetDataa from "../Components/GetDocs";
+import { GetAllProducts } from "../Components/Firebase";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <div>
       <Navbar />
-      <GetDataa />
+      <Card />
     </div>,
   },
   // {
