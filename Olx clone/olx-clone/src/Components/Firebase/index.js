@@ -80,7 +80,6 @@ export async function AddSalePost(addInfoResponse) {
     Image: image
   });
   console.log("Document written with ID: ", docRef.id);
-  GetAllProducts()
 }
 
 export async function GetAllProducts() {

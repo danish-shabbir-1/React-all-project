@@ -5,22 +5,23 @@ import Register from "../Components/Register";
 import Navbar from "../Components/Navbar";
 import Login from './../Components/login/login'
 import AddItem from "../Components/Add Item";
+import GetDataa from "../Components/GetDocs";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <div>
       <Navbar />
-      <Card />
+      <GetDataa />
     </div>,
   },
-  {
-    path: "/item/:id",
-    element:<div>
-      <Navbar />
-       <ShowSelectedItem />
-    </div>,
-  },
+  // {
+  //   path: "/item/:id",
+  //   element:<div>
+  //     <Navbar />
+  //      <ShowSelectedItem />
+  //   </div>,
+  // },
   {
     path: "/Register",
     element: <Register />,

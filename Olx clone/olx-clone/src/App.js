@@ -1,22 +1,29 @@
 import AddItem from "./Components/Add Item";
-import CardContainer from "./Components/main-cards";
-import ShowCardDetail from "./Components/Show Card";
 import Router from "./Config/routing";
-import { GetAllProducts } from "../Firebase/index";
-
+import { GetAllProducts } from "./Components/Firebase";
+import { useState } from "react";
+import GetDataa from "./Components/GetDocs";
 
 function App() {
+
+  const [displayProduct, setDisplayProduct] = useState()
+ async function fetchAllData() {
+    try {
+       const products = await GetAllProducts()
+       setDisplayProduct(products)
+        // console.log(displayProduct);
+    } catch (e) {
+      alert(e.massage)
+    }
+
+  }
+
+  fetchAllData()
+
   return (
     <div className="App">
       <Router />
-      function fetchAllData() {
-        
-      }
-      products.map(function (item) {
-          return <div>
-
-          </div>
-      })
+      <GetDataa  products={displayProduct}/>
     </div>
   );
 }
