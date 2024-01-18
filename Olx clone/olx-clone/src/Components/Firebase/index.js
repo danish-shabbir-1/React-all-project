@@ -80,12 +80,15 @@ export async function AddSalePost(addInfoResponse) {
     Image: image
   });
   console.log("Document written with ID: ", docRef.id);
+  GetAllProducts()
 }
 
 export async function GetAllProducts() {
   const querySnapshot = await getDocs(collection(db, "AddInfo"));
+  const products = []
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data());
+  products.push(doc.id , doc.data());
 });
+return products
 }
