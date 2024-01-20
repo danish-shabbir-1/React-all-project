@@ -34,7 +34,7 @@ const Publish = async (addInfo) => {
       <input onChange={(e) => setTitle(e.target.value)}  type="text" placeholder="Title" />
       <input onChange={(e) => setDescription(e.target.value)}  type="text" placeholder="Description" />
       <input onChange={(e) => setPrice(e.target.value)}  type="number" placeholder="Price" />
-      <input onChange={(e) => setImage(e.target.value)}  type="file" placeholder="Images" />
+      <input onChange={(e) => setImage(e.target.files[0])}  type="file" placeholder="Images" />
       <button onClick={Publish}>PubList</button>
 
     </div>

@@ -1,31 +1,15 @@
 import React from "react";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import GetDataa from "../GetDocs";
-import { GetAllProducts } from "../Firebase";
 
 
-const Card = () => {
-  let navigate = useNavigate();
-
-
-  const [displayProduct, setDisplayProduct] = useState();
-  async function fetchAllData() {
-    try {
-      const products = await GetAllProducts();
-      setDisplayProduct(products);
-      // console.log(displayProduct);
-    } catch (e) {
-      alert(e.massage);
-    }
-  }
-
-  // fetchAllData();
+const Card = ({product}) => {
 
   return (
     <div className="main-card">
-      <GetDataa products={displayProduct} />
+      <div className='contaaaner' key={product.id}>
+            <img src={product?.thumbnail} alt={product?.title} />
+            <p>{product?.title}</p>
+          </div>
     </div>
   );
 };

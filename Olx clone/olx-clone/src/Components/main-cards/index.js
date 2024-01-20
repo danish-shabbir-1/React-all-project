@@ -2,7 +2,8 @@ import React from "react";
 import Card from "../cards";
 import "./../../../src/App.css"
 import './../cards/style.css'
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import { GetAllProducts } from "../Firebase";
 
 const CardContainer = () => {
   const [product, setProducts] = useState([]);
@@ -11,10 +12,9 @@ const CardContainer = () => {
     getAllProducts();
   }, []);
 
-  const getAllProducts = () => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((res) => setProducts(res.products));
+  const getAllProducts =async () => {
+    const res = await GetAllProducts();
+    setProducts(res)
   };
 
   console.log(product);

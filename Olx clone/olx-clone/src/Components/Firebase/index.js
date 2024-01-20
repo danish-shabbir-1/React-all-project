@@ -83,11 +83,14 @@ export async function AddSalePost(addInfoResponse) {
 }
 
 export async function GetAllProducts() {
-  const querySnapshot = await getDocs(collection(db, "AddInfo"));
+  const querySnapshot = await getDocs(collection(db, "products"));
   const products = []
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
-  products.push(doc.id , doc.data());
+  products.push({
+     ...doc.data(),
+     id :doc.id
+  });
 });
 return products
 }

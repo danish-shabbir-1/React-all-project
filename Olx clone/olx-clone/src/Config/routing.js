@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <div>
       <Navbar />
-      {/* <Card /> */}
+      <Card />
     </div>,
   },
   // {
