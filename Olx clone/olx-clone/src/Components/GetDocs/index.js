@@ -2,7 +2,7 @@ import React from 'react';
 import './../cards/style.css'
 
 const GetDataa = ({ displayProduct }) => {
-
+  
   return (
     <div>
       {displayProduct?.map((item) => {
@@ -17,6 +17,5 @@ const GetDataa = ({ displayProduct }) => {
   );
 };
 
-GetDataa()
 
 export default GetDataa;

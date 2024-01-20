@@ -21,7 +21,7 @@ const Card = () => {
     }
   }
 
-  fetchAllData();
+  // fetchAllData();
 
   return (
     <div className="main-card">
