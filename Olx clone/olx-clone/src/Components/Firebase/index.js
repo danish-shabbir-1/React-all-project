@@ -2,8 +2,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut } from "firebase/auth";
 import { getFirestore , doc , setDoc ,collection, addDoc , getDocs } from "firebase/firestore";
-// import { useNavigate } from "react-router-dom";
-// import Register from "../Register";
 
 
 const firebaseConfig = {
@@ -46,30 +44,6 @@ export function UserLogin (userInfo) {
     alert('user Not SignIn')
   });
 }
-
-
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     navigate('/')
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     navigate('/logOut')
-//   }
-// });
-//   const navigate = useNavigate()
-
-// export function Logout () {
-
-
-
-//   signOut(auth).then(() => {
-//     alert('Logout User')
-//     navigate(<Register />)
-//   }).catch((e) => {
-//     alert(e.massage)
-//   });
-// }
 
 export async function AddSalePost(addInfoResponse) {
   const { title , description , price , image} = addInfoResponse

@@ -15,13 +15,6 @@ const router = createBrowserRouter([
       <Card />
     </div>,
   },
-  // {
-  //   path: "/item/:id",
-  //   element:<div>
-  //     <Navbar />
-  //      <ShowSelectedItem />
-  //   </div>,
-  // },
   {
     path: "/Register",
     element: <Register />,
