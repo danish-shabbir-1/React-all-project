@@ -1,7 +1,81 @@
 /* ///////// Login Page ////////// */
-.Signup-container{
-    border: 1px solid rgb(54, 53, 53);
-    display: inline-block;
-    height: auto;
-    padding: 20px 20px; 
+body {
+    background-color: rgb(24, 23, 23);
+    color: white;
 }
+
+.Signup-container {
+    border: 1px solid rgb(87, 83, 83);
+    display: block;
+    height: auto;
+    padding: 15px 15px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 19%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.Signup-container input {
+    display: block;
+    margin: 15px auto;
+    border-color: rgb(87, 83, 83);
+    background: transparent;
+    border: 1px solid;
+    padding: 5px 10px;
+    color: rgb(148, 148, 148);
+    border-radius: 5px;
+    width: 280px;
+    height: 18px;
+}
+
+.Signup-container button {
+    display: block;
+    margin: 15px auto;
+    border-color: rgb(53, 40, 165);
+    background: transparent;
+    border: 1px solid;
+    color: rgb(219, 215, 215);
+    border-radius: 5px;
+    width: 280px;
+    height: auto;
+    padding: 5px 10px;
+    background-color: rgb(49, 37, 153);
+    cursor: pointer;
+}
+
+/* //////// Dashboard ////////// */
+
+.Search {
+    width: 800px !important;
+    margin: auto 250px;
+    background: transparent!important;
+    border-color: rgb(87, 83, 83);
+    color: white!important;
+}
+
+.Search::placeholder {
+    color: white!important;
+}
+
+.search-Btn{
+width: 100px;
+background: transparent!important;
+color: white!important;
+border: 1px solid rgb(87, 83, 83);
+border-radius: 4px;
+}
+
+i{
+    font-size: 25px;
+    padding-left: 50px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+.sell-Btn{
+    margin-left: 100px!important;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 3px solid rgb(18, 63, 185);
+}   
