@@ -89,3 +89,37 @@ i{
     font-size: 14px;
     text-align: center;
 }
+
+.modal{
+    color: black;
+    text-align: center!important;
+}
+
+.modal-body input{
+    display: block;
+    margin: 15px auto;
+    border-color: rgb(87, 83, 83);
+    background: transparent;
+    border: 1px solid;
+    padding: 15px 10px;
+    color: rgb(148, 148, 148);
+    border-radius: 5px;
+    width: 280px;
+    height: 18px;
+}
+
+
+.modal-body{
+    background-color: rgb(20, 20, 20);
+    color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(44, 44, 44);
+}
+.modal-body button{
+width: 100px;
+text-align: center;
+}
+
+.close-btn{
+    margin-left: 30px;
+}
