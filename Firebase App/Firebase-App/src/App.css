@@ -45,6 +45,10 @@ body {
     cursor: pointer;
 }
 
+.Signup-container p {
+    cursor: pointer;
+}
+
 /* //////// Dashboard ////////// */
 
 .Search {

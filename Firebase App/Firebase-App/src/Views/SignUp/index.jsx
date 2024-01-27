@@ -14,7 +14,8 @@ const SignUp = () => {
       <input type="text" placeholder='Last Name'/>
       <input type="email" placeholder='Email'/>
       <input type="password" placeholder='Passward'/>
-      <button onClick={() => navigate('/login')}>Login</button>
+      <button>SignUp</button>
+      <p onClick={() => navigate('/login')}>Login</p>
     </div>
   )
 }
