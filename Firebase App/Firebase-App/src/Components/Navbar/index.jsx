@@ -47,10 +47,11 @@ function popUp() {
       <input type="text" placeholder='Title' />
       <input type="text" placeholder='Description' />
       <input type="number" placeholder='Price' />
+      <input type="file" placeholder='Add Image' />
             </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Publish</button>
       </div>
     </div>
   </div>
