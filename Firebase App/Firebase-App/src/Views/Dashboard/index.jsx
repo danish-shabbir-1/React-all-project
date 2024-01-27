@@ -24,7 +24,6 @@ function popUp() {
       <form class="d-flex" role="search">
         <input class="Search form-control me-2" type="Search" placeholder="Search" aria-label="Search"/>
         <button class="search-Btn" type="submit">Search</button>
-        <button class="search-Btn" type="submit">Search</button>
         <button type="button" class="sell-Btn search-Btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={popUp}>
         Sell
 </button> 
