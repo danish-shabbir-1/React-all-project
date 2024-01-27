@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./../../App.css";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../Firebase";
+
 const SignUp = () => {
   const [Signup, setSignup] = useState({
     FirstName: "",
@@ -13,7 +12,6 @@ const SignUp = () => {
   });
   const [errMas, setErrMas] = useState("");
 
-  // const [FirstName , LastName , email , passward] = Signup
   const navigate = useNavigate();
 
   const subMissionHandle = () => {
@@ -28,7 +26,6 @@ const SignUp = () => {
     }
     setErrMas("");
     console.log(Signup);
-    createUserWithEmailAndPassword(auth, Signup.email, Signup.passward)
   };
 
   return (
