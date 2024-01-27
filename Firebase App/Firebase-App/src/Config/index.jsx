@@ -1,15 +1,21 @@
-import React from 'react'
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "../Components/Navbar";
+import Login from "../Views/Login";
 
-  
-  const router = createBrowserRouter([
-  ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navbar />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
 
-  function Router() {
-      <RouterProvider router={router} />
-  }
+function Router() {
+    return <RouterProvider router={router} />;
+}
 
-  export default Router
+export default Router;

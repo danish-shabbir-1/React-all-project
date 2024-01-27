@@ -1,7 +1,7 @@
 import React from 'react'
 import './../../App.css'
 
-const Dashboard = () => {
+const Navbar = () => {
 
 function popUp() {
     const myModal = document.getElementById('myModal')
@@ -58,4 +58,4 @@ function popUp() {
   )
 }
 
-export default Dashboard
+export default Navbar

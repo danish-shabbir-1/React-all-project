@@ -1,13 +1,14 @@
 import './App.css'
-import Dashboard from './Views/Dashboard'
+import Navbar from './Components/Navbar'
 import Login from './Views/Login'
 import SignUp from './Views/SignUp'
+import Router from './Config/index'
 
 function App() {
 
   return (
     <>
-     <Dashboard />
+     <Router />
     </>
   )
 }
