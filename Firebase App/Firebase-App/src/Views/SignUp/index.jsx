@@ -15,7 +15,7 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
-   const subMissionHandle = async () => {
+   const subMissionHandle =  () => {
     if (
       !Signup.FirstName ||
       !Signup.LastName ||
@@ -26,9 +26,10 @@ const SignUp = () => {
       return;
     }
     setErrMas("");
-    console.log(Signup);
+    // console.log(Signup);
     try {
-      const userInfo = await Useer({FirstName, LastName, email, passward})
+      const userInfo =  Useer(Signup.FirstName, Signup.LastName, Signup.email, Signup.passward)
+      console.log(userInfo);
     } catch (error) {
       setErrMas(error.massage)
     }

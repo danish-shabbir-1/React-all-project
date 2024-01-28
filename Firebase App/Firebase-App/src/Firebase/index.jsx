@@ -22,9 +22,10 @@ const db = getFirestore(app);
 
 
 //////////// signIn User ///////////
-export function Useer(userInfo) { 
+
+export async function Useer(userInfo) { 
   const {name, lastName , email , passward} = userInfo
-  createUserWithEmailAndPassword(auth , email , passward)
+  await createUserWithEmailAndPassword(auth , email , passward)
   .then((userCredential) => {
     if(user) {
       alert('User create succesfull')
