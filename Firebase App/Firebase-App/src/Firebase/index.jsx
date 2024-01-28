@@ -22,10 +22,13 @@ const db = getFirestore(app);
 
 
 //////////// signIn User ///////////
-export function Useer() { 
-  createUserWithEmailAndPassword(auth)
+export function Useer(userInfo) { 
+  const {name, lastName , email , passward} = userInfo
+  createUserWithEmailAndPassword(auth , email , passward)
   .then((userCredential) => {
-    // Signed up 
+    if(user) {
+      alert('User create succesfull')
+    }
     const user = userCredential.user;
     // ...
   })

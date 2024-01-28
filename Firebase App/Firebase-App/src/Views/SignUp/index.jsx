@@ -28,9 +28,9 @@ const SignUp = () => {
     setErrMas("");
     console.log(Signup);
     try {
-      const usersigVal = await Useer({FirstName, LastName, email, passward})
+      const userInfo = await Useer({FirstName, LastName, email, passward})
     } catch (error) {
-      
+      setErrMas(error.massage)
     }
   };
   return (
