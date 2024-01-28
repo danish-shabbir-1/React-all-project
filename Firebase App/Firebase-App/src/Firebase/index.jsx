@@ -1,6 +1,7 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -12,6 +13,8 @@ const firebaseConfig = {
   measurementId: "G-3Y36SQ4RR4",
 };
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
@@ -19,8 +22,8 @@ const db = getFirestore(app);
 
 
 //////////// signIn User ///////////
-function userSignUp () {
-  createUserWithEmailAndPassword(auth, email, password)
+export function Useer() { 
+  createUserWithEmailAndPassword(auth)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;

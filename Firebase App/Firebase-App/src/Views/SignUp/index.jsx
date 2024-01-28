@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./../../App.css";
 import { useNavigate } from "react-router-dom";
+import { Useer } from "../../Firebase";
 
 const SignUp = () => {
   const [Signup, setSignup] = useState({
@@ -14,7 +15,7 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
-  const subMissionHandle = () => {
+   const subMissionHandle = async () => {
     if (
       !Signup.FirstName ||
       !Signup.LastName ||
@@ -26,8 +27,12 @@ const SignUp = () => {
     }
     setErrMas("");
     console.log(Signup);
+    try {
+      const usersigVal = await Useer({FirstName, LastName, email, passward})
+    } catch (error) {
+      
+    }
   };
-
   return (
     <div className="Signup-container">
       <h1>SignUp</h1>
