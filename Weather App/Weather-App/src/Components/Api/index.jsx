@@ -12,7 +12,7 @@ const [data, setData] = useState()
 const GetData = () => {
 const api = fetch(`https://api.weatherapi.com/v1/forecast.json?key=91b4369798474fee84b51233233010&q=${location}&days=3&aqi=no`)
 .then(res => res.json())
-.then(res => setData(res))
+.then(response => setData(response))
 .catch((error) => console.error("Error fetching data:", error));
 }
 console.log(data);
