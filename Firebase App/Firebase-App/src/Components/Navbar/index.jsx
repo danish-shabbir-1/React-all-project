@@ -1,8 +1,22 @@
 import React from "react";
 import "./../../App.css";
 import { SignOutUser } from "../../Firebase";
+import { useState } from "react";
+import { AddItemDataBase } from "../../Firebase";
+
+
+
 
 const Navbar = () => {
+
+const [AddItem , setAddItem] = useState({
+  Title : '',
+  Description : '',
+  Price : '',
+  Image : ''
+})
+
+console.log(AddItem);
   function popUp() {
     const myModal = document.getElementById("myModal");
     const myInput = document.getElementById("myInput");
@@ -20,6 +34,11 @@ const Navbar = () => {
       myInput.focus();
     });
   }
+
+  async function addDaata() {
+    const addItemIndataBase = await AddItemDataBase(AddItem)
+  }
+
 
   return (
     <div>
@@ -84,10 +103,10 @@ const Navbar = () => {
           <div class="modal-content">
             <div class="modal-body modal-body">
               <h2>DS STORE</h2>
-              <input type="text" placeholder="Title" />
-              <input type="text" placeholder="Description" />
-              <input type="number" placeholder="Price" />
-              <input type="file" placeholder="Add Image" />
+              <input onChange={(e) => setAddItem((prev) => ({prev, Title : e.target.value}))} type="text" placeholder="Title" />
+              <input onChange={(e) => setAddItem((prev) => ({prev, Description : e.target.value}))} type="text" placeholder="Description" />
+              <input onChange={(e) => setAddItem((prev) => ({prev, Price : e.target.value}))} type="number" placeholder="Price" />
+              <input onChange={(e) => setAddItem((prev) => ({prev, Image : e.target.value}))} type="file" placeholder="Add Image" />
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -95,7 +114,7 @@ const Navbar = () => {
               >
                 Close
               </button>
-              <button type="button" class="close-btn btn btn-primary">
+              <button onClick={addDaata} type="button" class="close-btn btn btn-primary">
                 Publish
               </button>
             </div>

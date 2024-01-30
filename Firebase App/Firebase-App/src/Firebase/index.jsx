@@ -85,12 +85,16 @@ const navigatee = useNavigate()
 
 //////////// AddData User ///////////
 
-export async function AddItem() {
+export async function AddItemDataBase(addItemIndataBase) {
+
+const {Title, Description, Price, Image} = addItemIndataBase
+
   try {
-    const docRef = await addDoc(collection(db, "users"), {
-      first: "Ada",
-      last: "Lovelace",
-      born: 1815
+    const docRef = await addDoc(collection(db, "AddData"), {
+      Title,
+      Description,
+      Price,
+      
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
