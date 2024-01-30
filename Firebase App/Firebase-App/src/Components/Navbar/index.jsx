@@ -2,7 +2,6 @@ import React from "react";
 import "./../../App.css";
 import { SignOutUser } from "../../Firebase";
 
-
 const Navbar = () => {
   function popUp() {
     const myModal = document.getElementById("myModal");
@@ -61,7 +60,12 @@ const Navbar = () => {
                 Sell
               </button>
               <i class="fa-solid fa-cart-shopping"></i>
-               <i data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={Logout} class="fa-solid fa-circle-user"></i>
+              <i
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                onClick={Logout}
+                class="fa-solid fa-circle-user"
+              ></i>
             </form>
           </div>
         </div>
@@ -100,35 +104,50 @@ const Navbar = () => {
       </div>
       {/* ///////////// modale here //////////// */}
 
-      {/* ////////////////////////////////// */}
+      {/* ////////////// profile modale ///////////// */}
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body prf-modal">
-        <div className="left-side">
-          <div className="prf-image">
-            <img src="" alt="" />
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body prf-modal">
+              <div className="left-side">
+                <div className="prf-image">
+                  <img src="" alt="" />
+                </div>
+                <h1>Name</h1>
+              </div>
+              <div className="rigth-side">
+                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="Last Name" />
+                <input type="email" placeholder="email" />
+                <button onClick={SignOutUser}> SignOut</button>
+              </div>
+              <div className="prf-controls">
+                <button
+                  type="button"
+                  class="btn btn-secondary modif-btn"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save Changes
+                </button>
+              </div>
+            </div>
           </div>
-          <h1>Name</h1>
         </div>
-        <div className="rigth-side">
-          <input type="text" placeholder="First Name"/>
-          <input type="text" placeholder="Last Name"/>
-          <input type="email" placeholder="email"/>
-          <button onClick={SignOutUser}> SignOut</button>
-        </div>
-        <div className="prf-controls">
-      <button type="button" class="btn btn-secondary modif-btn" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save Changes</button>
       </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-      {/* ////////////////////////////////// */}
+      {/* ////////////// profile modale ///////////// */}
     </div>
   );
 };

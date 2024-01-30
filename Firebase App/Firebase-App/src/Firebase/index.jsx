@@ -6,7 +6,7 @@ import {
   onAuthStateChanged,
   signOut
 } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc , collection, addDoc  } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 
@@ -71,12 +71,29 @@ onAuthStateChanged(auth, (user) => {
 });
 
 //////////// SignOut User ///////////
+
 export function SignOutUser() {
-  const navigate = useNavigate()
+
+const navigatee = useNavigate()
   signOut(auth).then(() => {
-    navigate('/signUp')
+    alert('user SignOut')
+    navigatee('/signUp')
   }).catch((e) => {
-   alert(e.message)
+    alert(e.message)
   });
-  
+}
+
+//////////// AddData User ///////////
+
+export async function AddItem() {
+  try {
+    const docRef = await addDoc(collection(db, "users"), {
+      first: "Ada",
+      last: "Lovelace",
+      born: 1815
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
 }
