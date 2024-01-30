@@ -4,11 +4,16 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
+  signOut,
 } from "firebase/auth";
-import { getFirestore, doc, setDoc , collection, addDoc  } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  collection,
+  addDoc,
+} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -44,60 +49,64 @@ export async function Useer(userInfo) {
 //////////// signIn User ///////////
 
 export function UserLogin(loginInfo) {
-  
-  const {email, passward} = loginInfo
+  const { email, passward } = loginInfo;
   signInWithEmailAndPassword(auth, email, passward)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    alert('User Login')
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+    .then((userCredential) => {
+      const user = userCredential.user;
+      alert("User Login");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 }
 
 //////////// OnAuth User ///////////
 
 onAuthStateChanged(auth, (user) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   if (user) {
-    navigate('/')
+    navigate("/");
     const uid = user.uid;
     // ...
   } else {
-    navigate('/signUp')
+    navigate("/signUp");
   }
 });
 
 //////////// SignOut User ///////////
 
 export function SignOutUser() {
-
-const navigatee = useNavigate()
-  signOut(auth).then(() => {
-    alert('user SignOut')
-    navigatee('/signUp')
-  }).catch((e) => {
-    alert(e.message)
-  });
+  const navigatee = useNavigate();
+  signOut(auth)
+    .then(() => {
+      alert("user SignOut");
+      navigatee("/signUp");
+    })
+    .catch((e) => {
+      alert(e.message);
+    });
 }
 
 //////////// AddData User ///////////
 
 export async function AddItemDataBase(addItemIndataBase) {
+  const { Title, Description, Price, Image } = addItemIndataBase;
 
-const {Title, Description, Price, Image} = addItemIndataBase
+  console.log(Title);
+  console.log(Description);
+  console.log(Price);
+  console.log(Image);
 
   try {
     const docRef = await addDoc(collection(db, "AddData"), {
       Title,
       Description,
       Price,
-      Image
+      Image,
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error("Error adding document: ", e.massage);
   }
 }
