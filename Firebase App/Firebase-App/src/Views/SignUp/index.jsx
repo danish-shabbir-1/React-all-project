@@ -30,6 +30,7 @@ const SignUp = () => {
     try {
       const userInfo = await Useer(Signup)
       console.log(userInfo);
+      navigate('/login')
     } catch (error) {
       setErrMas(error.massage)
     }

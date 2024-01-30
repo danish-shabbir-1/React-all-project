@@ -11,6 +11,15 @@ const Navbar = () => {
     });
   }
 
+  function Logout() {
+    const myModal = document.getElementById("myModal");
+    const myInput = document.getElementById("myInput");
+
+    myModal.addEventListener("shown.bs.modal", () => {
+      myInput.focus();
+    });
+  }
+
   return (
     <div>
       <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -50,13 +59,13 @@ const Navbar = () => {
                 Sell
               </button>
               <i class="fa-solid fa-cart-shopping"></i>
-              <i class="fa-solid fa-circle-user"></i>
+               <i onClick={Logout} class="fa-solid fa-circle-user"></i>
             </form>
           </div>
         </div>
       </nav>
 
-      {/* ///////////// modale here //////////// */}
+      {/* ///////////// Add cart modale here //////////// */}
 
       <div
         class="modal fade modal-dark"
@@ -87,6 +96,16 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* ///////////// modale here //////////// */}
+      {/* ///////////// user logout modale here //////////// */}
+
+      <div class="modal-body">
+  <h2 class="fs-5">Popover in a modal</h2>
+  <p>This <button class="btn btn-secondary" data-bs-toggle="popover" title="Popover title" data-bs-content="Popover body content is set in this attribute.">button</button> triggers a popover on click.</p>
+  <hr/>
+  <h2 class="fs-5">Tooltips in a modal</h2>
+  <p><a href="#" data-bs-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" data-bs-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
+</div>
       {/* ///////////// modale here //////////// */}
     </div>
   );

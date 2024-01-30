@@ -1,7 +1,10 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
-
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -13,26 +16,39 @@ const firebaseConfig = {
   measurementId: "G-3Y36SQ4RR4",
 };
 
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
+//////////// signUp User ///////////
+
+export async function Useer(userInfo) {
+  const { FirstName, LastName, email, passward } = userInfo;
+
+  const { user } = await createUserWithEmailAndPassword(auth, email, passward);
+  const userDocRef = doc(db, "UserInformation", user.uid);
+  await setDoc(userDocRef, {
+    FirstName,
+    LastName,
+    email,
+  });
+  alert("User Create Succesfull");
+  return userDocRef;
+}
 
 //////////// signIn User ///////////
 
-export async function Useer(userInfo) { 
+export function UserLogin(loginInfo) {
 
-   const {firstName, lastName, email, passward} = userInfo
-   
-   try {
-   const userCredential = await createUserWithEmailAndPassword(auth , email , passward)
-   alert('user Create')
-   return userCredential
- } catch (error) {
-  alert(error.massage)
- }
+  const {email, passward} = loginInfo
+  signInWithEmailAndPassword(auth, email, passward)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      alert('User Login')
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 }
-
