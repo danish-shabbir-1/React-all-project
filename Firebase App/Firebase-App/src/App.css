@@ -123,3 +123,22 @@ text-align: center;
 .close-btn{
     margin-left: 30px;
 }
+
+/* /////////// profile logout modal ////////// */
+
+.prf-modal{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prf-modal .left-side{
+    height: 400px;
+    width: 40%;
+    background-color: blueviolet;
+}
+
+.prf-modal .rigth-side{
+    height: 400px;
+    width: 60%;
+    background-color: rgb(4, 84, 74);
+}

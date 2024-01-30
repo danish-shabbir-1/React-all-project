@@ -59,7 +59,7 @@ const Navbar = () => {
                 Sell
               </button>
               <i class="fa-solid fa-cart-shopping"></i>
-               <i onClick={Logout} class="fa-solid fa-circle-user"></i>
+               <i data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={Logout} class="fa-solid fa-circle-user"></i>
             </form>
           </div>
         </div>
@@ -98,7 +98,23 @@ const Navbar = () => {
       </div>
       {/* ///////////// modale here //////////// */}
 
-      
+      {/* ////////////////////////////////// */}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body prf-modal">
+        <div className="left-side"></div>
+        <div className="rigth-side"></div>
+      </div>
+      {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save Changes</button> */}
+    </div>
+  </div>
+</div>
+
+
+      {/* ////////////////////////////////// */}
     </div>
   );
 };
