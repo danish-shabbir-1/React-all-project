@@ -94,7 +94,7 @@ const {Title, Description, Price, Image} = addItemIndataBase
       Title,
       Description,
       Price,
-      
+      Image
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
