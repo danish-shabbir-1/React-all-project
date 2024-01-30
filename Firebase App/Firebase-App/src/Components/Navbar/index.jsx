@@ -1,6 +1,6 @@
 import React from "react";
 import "./../../App.css";
-
+import image from './../../../'
 const Navbar = () => {
   function popUp() {
     const myModal = document.getElementById("myModal");
