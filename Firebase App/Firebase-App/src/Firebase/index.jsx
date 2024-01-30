@@ -24,9 +24,15 @@ const db = getFirestore(app);
 //////////// signIn User ///////////
 
 export async function Useer(userInfo) { 
-  
+
    const {firstName, lastName, email, passward} = userInfo
- const userCredential = await createUserWithEmailAndPassword(auth , email , passward)
- return userCredential
+   
+   try {
+   const userCredential = await createUserWithEmailAndPassword(auth , email , passward)
+   alert('user Create')
+   return userCredential
+ } catch (error) {
+  alert(error.massage)
+ }
 }
 
