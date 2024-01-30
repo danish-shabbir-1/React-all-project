@@ -134,17 +134,27 @@ text-align: center;
 .prf-modal .left-side{
     height: 400px;
     width: 40%;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 .prf-modal .rigth-side{
     height: 400px;
     width: 60%;
-    background-color: rgb(4, 84, 74);
+    /* background-color: rgb(4, 84, 74); */
 }
 .prf-modal .rigth-side input{
 margin: 20px auto;
 width: 250px;
+}
+.prf-modal .rigth-side button{
+width: auto;
+height: auto;
+background-color: rgba(33, 36, 207, 0.86);
+color: white;
+border: 1px solid rgba(33, 36, 207, 0.86);
+padding: 5px 10px;
+border-radius: 7px;
+margin-left: 160px;
 }
 
 .prf-modal .prf-controls{

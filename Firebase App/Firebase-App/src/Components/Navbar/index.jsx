@@ -114,6 +114,7 @@ const Navbar = () => {
           <input type="text" placeholder="First Name"/>
           <input type="text" placeholder="Last Name"/>
           <input type="email" placeholder="email"/>
+          <button> SignOut</button>
         </div>
         <div className="prf-controls">
       <button type="button" class="btn btn-secondary modif-btn" data-bs-dismiss="modal">Close</button>

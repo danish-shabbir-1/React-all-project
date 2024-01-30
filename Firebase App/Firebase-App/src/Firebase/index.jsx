@@ -3,8 +3,11 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
 } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -40,15 +43,32 @@ export async function Useer(userInfo) {
 //////////// signIn User ///////////
 
 export function UserLogin(loginInfo) {
-
+  
   const {email, passward} = loginInfo
   signInWithEmailAndPassword(auth, email, passward)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      alert('User Login')
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+  .then((userCredential) => {
+    const user = userCredential.user;
+    alert('User Login')
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
 }
+
+//////////// OnAuth User ///////////
+
+onAuthStateChanged(auth, (user) => {
+  const navigate = useNavigate()
+  if (user) {
+    navigate('/')
+    const uid = user.uid;
+    // ...
+  } else {
+    navigate('/signUp')
+  }
+});
+
+//////////// SignOut User ///////////
+
+
