@@ -104,11 +104,22 @@ const Navbar = () => {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body prf-modal">
-        <div className="left-side"></div>
-        <div className="rigth-side"></div>
+        <div className="left-side">
+          <div className="prf-image">
+            <img src="" alt="" />
+          </div>
+          <h1>Name</h1>
+        </div>
+        <div className="rigth-side">
+          <input type="text" placeholder="First Name"/>
+          <input type="text" placeholder="Last Name"/>
+          <input type="email" placeholder="email"/>
+        </div>
+        <div className="prf-controls">
+      <button type="button" class="btn btn-secondary modif-btn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save Changes</button>
       </div>
-      {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save Changes</button> */}
+      </div>
     </div>
   </div>
 </div>
