@@ -13,7 +13,7 @@ import {
   collection,
   addDoc,
 } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -29,6 +29,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
+const navigate = useNavigate();
 
 //////////// signUp User ///////////
 
@@ -77,11 +78,10 @@ onAuthStateChanged(auth, (user) => {
 //////////// SignOut User ///////////
 
 export function SignOutUser() {
-  const navigatee = useNavigate();
   signOut(auth)
     .then(() => {
       alert("user SignOut");
-      navigatee("/signUp");
+      navigate("/signUp");
     })
     .catch((e) => {
       alert(e.message);
