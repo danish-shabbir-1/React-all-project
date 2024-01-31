@@ -18,7 +18,7 @@ const api = fetch(`https://api.weatherapi.com/v1/forecast.json?key=91b4369798474
 console.log(data);
 
   return <div>
-<h1>{data?.date}</h1>
+<h1>{Date.location?.country }</h1>
   </div>;
 };
 
