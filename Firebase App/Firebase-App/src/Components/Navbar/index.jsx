@@ -16,7 +16,7 @@ const [AddItem , setAddItem] = useState({
   Image : ''
 })
 
-console.log(AddItem);
+// console.log(AddItem);
   function popUp() {
     const myModal = document.getElementById("myModal");
     const myInput = document.getElementById("myInput");
@@ -74,7 +74,7 @@ console.log(AddItem);
                 class="sell-Btn search-Btn"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                onClick={popUp}
+                onClick={popUp }
               >
                 Sell
               </button>
@@ -114,7 +114,7 @@ console.log(AddItem);
               >
                 Close
               </button>
-              <button onClick={addDaata} type="button" class="close-btn btn btn-primary">
+              <button data-bs-dismiss="modal" onClick={addDaata} type="button" class="close-btn btn btn-primary">
                 Publish
               </button>
             </div>

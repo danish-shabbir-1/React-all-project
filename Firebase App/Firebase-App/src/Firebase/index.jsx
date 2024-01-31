@@ -1,4 +1,4 @@
-import { initializeApp , getApp} from "firebase/app";
+import { initializeApp, getApp } from "firebase/app";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -13,7 +13,7 @@ import {
   collection,
   addDoc,
 } from "firebase/firestore";
-import { useNavigate  } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -27,11 +27,11 @@ const firebaseConfig = {
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 // Get a non-default Storage bucket
-const storage = getStorage();
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
+const storage = getStorage();
 
 //////////// signUp User ///////////
 
@@ -67,13 +67,13 @@ export function UserLogin(loginInfo) {
 //////////// OnAuth User ///////////
 
 onAuthStateChanged(auth, (user) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   if (user) {
-    navigate("/");
+    // navigate("/");
     const uid = user.uid;
     // ...
   } else {
-    navigate("/signUp");
+    // navigate("/signUp");
   }
 });
 
@@ -82,8 +82,8 @@ onAuthStateChanged(auth, (user) => {
 export function SignOutUser() {
   signOut(auth)
     .then(() => {
-      alert("user SignOut");
-      navigate("/signUp");
+      // alert("user SignOut");
+      // navigate("/signUp");
     })
     .catch((e) => {
       alert(e.message);
@@ -93,33 +93,37 @@ export function SignOutUser() {
 //////////// AddData User ///////////
 
 export async function AddItemDataBase(addItemIndataBase) {
-  const { Title, Description, Price, Image } = addItemIndataBase;
-  const storageRef = ref(storage, 'Image');
-  await uploadBytes(storageRef, Image).then((snapshot) => {
-    console.log('Uploaded a blob or file!');
 
-    getDownloadURL(storageRef).then(
-      async (url) => {
-        
-        try {
-          const docRef = await addDoc(collection(db, "AddData"), {
-            Title,
-            Description,
-            Price,
-            url,
-          });
-          console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-          console.error("Error adding document: ", e.massage);
-        }
-    }
-    )
-  });
+  const { Title, Description, Price, Image } = addItemIndataBase;
 
   console.log(Title);
   console.log(Description);
   console.log(Price);
   console.log(Image);
+
+  const storageRef = ref(storage, "Image");
+  await uploadBytes(storageRef, Image).then((snapshot) => {
+    console.log("Uploaded a blob or file!");
+
+    getDownloadURL(storageRef).then(async (url) => {
+      try {
+        const docRef = await addDoc(collection(db, "AddData"), {
+          Title,
+          Description,
+          Price,
+          url,
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.log("Error adding document: ", e.massage);
+      }
+    });
+  });
+
+  // console.log(Title);
+  // console.log(Description);
+  // console.log(Price);
+  // console.log(Image);
 
   // try {
   //   const docRef = await addDoc(collection(db, "AddData"), {
