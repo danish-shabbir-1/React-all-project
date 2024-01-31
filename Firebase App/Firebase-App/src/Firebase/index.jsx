@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp , getApp} from "firebase/app";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -24,12 +24,14 @@ const firebaseConfig = {
   appId: "1:590572980909:web:383169b9da3e246ce0d424",
   measurementId: "G-3Y36SQ4RR4",
 };
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 
+// Get a non-default Storage bucket
+const storage = getStorage();
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
-const navigate = useNavigate();
 
 //////////// signUp User ///////////
 
@@ -92,21 +94,42 @@ export function SignOutUser() {
 
 export async function AddItemDataBase(addItemIndataBase) {
   const { Title, Description, Price, Image } = addItemIndataBase;
+  const storageRef = ref(storage, 'Image');
+  await uploadBytes(storageRef, Image).then((snapshot) => {
+    console.log('Uploaded a blob or file!');
+
+    getDownloadURL(storageRef).then(
+      async (url) => {
+        
+        try {
+          const docRef = await addDoc(collection(db, "AddData"), {
+            Title,
+            Description,
+            Price,
+            url,
+          });
+          console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+          console.error("Error adding document: ", e.massage);
+        }
+    }
+    )
+  });
 
   console.log(Title);
   console.log(Description);
   console.log(Price);
   console.log(Image);
 
-  try {
-    const docRef = await addDoc(collection(db, "AddData"), {
-      Title,
-      Description,
-      Price,
-      Image,
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e.massage);
-  }
+  // try {
+  //   const docRef = await addDoc(collection(db, "AddData"), {
+  //     Title,
+  //     Description,
+  //     Price,
+  //     Image,
+  //   });
+  //   console.log("Document written with ID: ", docRef.id);
+  // } catch (e) {
+  //   console.error("Error adding document: ", e.massage);
+  // }
 }

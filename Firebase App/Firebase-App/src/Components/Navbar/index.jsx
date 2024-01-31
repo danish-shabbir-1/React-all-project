@@ -106,7 +106,7 @@ console.log(AddItem);
               <input onChange={(e) => setAddItem((prev) => ({ ...prev, Title : e.target.value}))} type="text" placeholder="Title" />
               <input onChange={(e) => setAddItem((prev) => ({ ...prev, Description : e.target.value}))} type="text" placeholder="Description" />
               <input onChange={(e) => setAddItem((prev) => ({ ...prev, Price : e.target.value}))} type="number" placeholder="Price" />
-              <input onChange={(e) => setAddItem((prev) => ({ ...prev, Image : e.target.value}))} type="file" placeholder="Add Image" />
+              <input onChange={(e) => setAddItem((prev) => ({ ...prev, Image : e.target.files[0]}))} type="file" placeholder="Add Image" />
               <button
                 type="button"
                 class="btn btn-secondary"
