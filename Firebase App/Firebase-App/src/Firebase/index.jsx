@@ -92,14 +92,12 @@ export function signOutUser() {
 //////////// AddData User ///////////
 
 export async function AddItemDataBase(addItemIndataBase) {
-  
   const { Title, Description, Price, Image } = addItemIndataBase;
-  
-  
+
   const storageRef = ref(storage, "Image/");
   await uploadBytes(storageRef, Image).then((snapshot) => {
     console.log("Uploaded a blob or file!");
-    
+
     getDownloadURL(storageRef).then(async (url) => {
       console.log(url);
       try {
@@ -118,6 +116,11 @@ export async function AddItemDataBase(addItemIndataBase) {
 }
 
 //////////// GetData User ///////////
-function getData() {
-  
+async function getData() {
+  const querySnapshot = await getDocs(collection(db, "AddData"));
+
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
 }
