@@ -24,16 +24,27 @@ const router = createBrowserRouter([
   }
 ]);
 
-useEffect(() =>{
-  ProtectRoutes()
-},[window.location.pathname , user])
-
-function ProtectRoutes() {
+function ptRoutes() {
 
   const navigate = useNavigate()
   
   const path = window.location.pathname;
   const [user, setUser] = useState(true)
+
+useEffect(() => {
+    
+  setUserData(res?.userData);
+  setUser(res?.user);
+  setLoader(false);
+
+}, [res]);
+
+useEffect(() =>{
+  setUser(res?.user);
+  ProtectRoutes()
+},[window.location.pathname , user])
+
+function ProtectRoutes() {
 
   console.log(path);
 
@@ -45,7 +56,7 @@ function ProtectRoutes() {
 
   }
 
-}
+}}
 
 function Router() {
     return <RouterProvider router={router} />;

@@ -91,18 +91,14 @@ export function signOutUser() {
 //////////// AddData User ///////////
 
 export async function AddItemDataBase(addItemIndataBase) {
-
+  
   const { Title, Description, Price, Image } = addItemIndataBase;
-
-  // console.log(Title);
-  // console.log(Description);
-  // console.log(Price);
-  // console.log(Image);
-
+  
+  
   const storageRef = ref(storage, "Image/");
   await uploadBytes(storageRef, Image).then((snapshot) => {
     console.log("Uploaded a blob or file!");
-
+    
     getDownloadURL(storageRef).then(async (url) => {
       console.log(url);
       try {
@@ -118,21 +114,9 @@ export async function AddItemDataBase(addItemIndataBase) {
       }
     });
   });
-
-  // console.log(Title);
-  // console.log(Description);
-  // console.log(Price);
-  // console.log(Image);
-
-  // try {
-  //   const docRef = await addDoc(collection(db, "AddData"), {
-  //     Title,
-  //     Description,
-  //     Price,
-  //     Image,
-  //   });
-  //   console.log("Document written with ID: ", docRef.id);
-  // } catch (e) {
-  //   console.error("Error adding document: ", e.massage);
-  // }
 }
+
+//////////// GetData User ///////////
+
+
+
