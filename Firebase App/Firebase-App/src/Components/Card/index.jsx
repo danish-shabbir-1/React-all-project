@@ -10,7 +10,7 @@ const Card = ({ product }) => {
         <h5 class="card-title">{product?.Title}</h5>
         <p class="card-text">{product?.Description}</p>
         <a href="#" class="btn btn-primary">
-          Go somewhere
+          Go somewere
         </a>
       </div>
     </div>
