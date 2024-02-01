@@ -116,7 +116,7 @@ export async function AddItemDataBase(addItemIndataBase) {
 }
 
 //////////// GetData User ///////////
-async function getData() {
+export async function getData() {
   const querySnapshot = await getDocs(collection(db, "AddData"));
 
   querySnapshot.forEach((doc) => {
@@ -124,3 +124,5 @@ async function getData() {
     console.log(doc.id, " => ", doc.data());
   });
 }
+
+getData()

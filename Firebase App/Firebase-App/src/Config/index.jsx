@@ -4,11 +4,15 @@ import Navbar from "../Components/Navbar";
 import Login from "../Views/Login";
 import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
+import Card from "../Components/Card";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar />,
+    element: <div>
+      <Navbar />
+      <Card />
+    </div>,
   },
   {
     path: "/login",
