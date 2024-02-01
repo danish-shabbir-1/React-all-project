@@ -13,7 +13,7 @@ import {
   collection,
   addDoc,
 } from "firebase/firestore";
-// import { useNavigate } from "react-router-dom";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -24,14 +24,13 @@ const firebaseConfig = {
   appId: "1:590572980909:web:383169b9da3e246ce0d424",
   measurementId: "G-3Y36SQ4RR4",
 };
-import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 // Get a non-default Storage bucket
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
-const storage = getStorage();
+const storage = getStorage(app);
 
 //////////// signUp User ///////////
 
@@ -79,11 +78,10 @@ onAuthStateChanged(auth, (user) => {
 
 //////////// SignOut User ///////////
 
-export function SignOutUser() {
+export function signOutUser() {
   signOut(auth)
     .then(() => {
-      // alert("user SignOut");
-      // navigate("/signUp");
+      alert("user SignOut");
     })
     .catch((e) => {
       alert(e.message);
@@ -96,16 +94,17 @@ export async function AddItemDataBase(addItemIndataBase) {
 
   const { Title, Description, Price, Image } = addItemIndataBase;
 
-  console.log(Title);
-  console.log(Description);
-  console.log(Price);
-  console.log(Image);
+  // console.log(Title);
+  // console.log(Description);
+  // console.log(Price);
+  // console.log(Image);
 
-  const storageRef = ref(storage, "Image");
+  const storageRef = ref(storage, "Image/");
   await uploadBytes(storageRef, Image).then((snapshot) => {
     console.log("Uploaded a blob or file!");
 
     getDownloadURL(storageRef).then(async (url) => {
+      console.log(url);
       try {
         const docRef = await addDoc(collection(db, "AddData"), {
           Title,

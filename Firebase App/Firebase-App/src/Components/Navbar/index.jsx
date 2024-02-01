@@ -1,6 +1,6 @@
 import React from "react";
 import "./../../App.css";
-import { SignOutUser } from "../../Firebase";
+import { signOutUser } from "../../Firebase";
 import { useState } from "react";
 import { AddItemDataBase } from "../../Firebase";
 
@@ -42,13 +42,13 @@ const [AddItem , setAddItem] = useState({
 
   return (
     <div>
-      <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             DS STORE
           </a>
           <button
-            class=" navbar-toggler"
+            className=" navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -56,34 +56,34 @@ const [AddItem , setAddItem] = useState({
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex" role="search">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <form className="d-flex" role="search">
               <input
-                class="Search form-control me-2"
+                className="Search form-control me-2"
                 type="Search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="search-Btn" type="submit">
+              <button className="search-Btn" type="submit">
                 Search
               </button>
               <button
                 type="button"
-                class="sell-Btn search-Btn"
+                className="sell-Btn search-Btn"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 onClick={popUp }
               >
                 Sell
               </button>
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
               <i
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"
                 onClick={Logout}
-                class="fa-solid fa-circle-user"
+                className="fa-solid fa-circle-user"
               ></i>
             </form>
           </div>
@@ -93,15 +93,15 @@ const [AddItem , setAddItem] = useState({
       {/* ///////////// Add cart modale here //////////// */}
 
       <div
-        class="modal fade modal-dark"
+        className="modal fade modal-dark"
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body modal-body">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-body modal-body">
               <h2>DS STORE</h2>
               <input onChange={(e) => setAddItem((prev) => ({ ...prev, Title : e.target.value}))} type="text" placeholder="Title" />
               <input onChange={(e) => setAddItem((prev) => ({ ...prev, Description : e.target.value}))} type="text" placeholder="Description" />
@@ -109,12 +109,12 @@ const [AddItem , setAddItem] = useState({
               <input onChange={(e) => setAddItem((prev) => ({ ...prev, Image : e.target.files[0]}))} type="file" placeholder="Add Image" />
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button data-bs-dismiss="modal" onClick={addDaata} type="button" class="close-btn btn btn-primary">
+              <button data-bs-dismiss="modal" onClick={addDaata} type="button" className="close-btn btn btn-primary">
                 Publish
               </button>
             </div>
@@ -126,7 +126,7 @@ const [AddItem , setAddItem] = useState({
       {/* ////////////// profile modale ///////////// */}
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -134,9 +134,9 @@ const [AddItem , setAddItem] = useState({
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body prf-modal">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-body prf-modal">
               <div className="left-side">
                 <div className="prf-image">
                   <img src="" alt="" />
@@ -147,17 +147,17 @@ const [AddItem , setAddItem] = useState({
                 <input type="text" placeholder="First Name" />
                 <input type="text" placeholder="Last Name" />
                 <input type="email" placeholder="email" />
-                <button onClick={SignOutUser}> SignOut</button>
+                <button onClick={signOutUser}> SignOut</button>
               </div>
               <div className="prf-controls">
                 <button
                   type="button"
-                  class="btn btn-secondary modif-btn"
+                  className="btn btn-secondary modif-btn"
                   data-bs-dismiss="modal"
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" className="btn btn-primary">
                   Save Changes
                 </button>
               </div>
