@@ -12,6 +12,7 @@ import {
   setDoc,
   collection,
   addDoc,
+  getDocs,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
