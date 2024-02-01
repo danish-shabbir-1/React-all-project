@@ -118,11 +118,15 @@ export async function AddItemDataBase(addItemIndataBase) {
 //////////// GetData User ///////////
 export async function getData() {
   const querySnapshot = await getDocs(collection(db, "AddData"));
-
+const product = []
   querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    product.push({
+      ...doc.data(),
+      id : doc.id
+    })
+    console.log(product);
   });
+  return product
 }
 
 getData()
