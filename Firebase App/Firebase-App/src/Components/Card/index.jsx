@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = ({ product }) => {
-  console.log("Cqrd prd", product);
+  console.log("Card Products", product?.url);
 
   return (
     <div class="card" style={{ width: 288 }} key={product?.id}>

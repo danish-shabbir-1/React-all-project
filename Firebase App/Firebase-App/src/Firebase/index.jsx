@@ -94,12 +94,11 @@ export function signOutUser() {
 export async function AddItemDataBase(addItemIndataBase) {
   const { Title, Description, Price, Image } = addItemIndataBase;
 
-  const storageRef = ref(storage, "Image/");
+  const storageRef = ref(storage, `Image/`);
   await uploadBytes(storageRef, Image).then((snapshot) => {
     console.log("Uploaded a blob or file!");
 
     getDownloadURL(storageRef).then(async (url) => {
-      console.log(url);
       try {
         const docRef = await addDoc(collection(db, "AddData"), {
           Title,

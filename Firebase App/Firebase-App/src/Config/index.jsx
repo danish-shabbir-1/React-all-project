@@ -4,14 +4,14 @@ import Navbar from "../Components/Navbar";
 import Login from "../Views/Login";
 import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
-import Card from "../Components/Card";
+import GetCardData from '../Components/GetCardData'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <div>
       <Navbar />
-      <Card />
+      <GetCardData />
     </div>,
   },
   {
