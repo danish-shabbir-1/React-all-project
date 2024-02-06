@@ -5,7 +5,6 @@ import Login from "../Views/Login";
 import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
 import GetCardData from '../Components/GetCardData'
-import { signOut } from "firebase/auth";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +43,7 @@ function PtRoutes() {
   const navigate = useNavigate()
   
   const path = window.location.pathname;
+  const [user, setUser] = useState(true)
 
 useEffect(() =>{
   ProtectRoutes()
@@ -55,10 +55,9 @@ function ProtectRoutes() {
 
   if (user) {
     
-    if(path === '/login' || path === '/signUp'){
-      navigate('/')
-  } else if(path === signOut) 
-  navigate('/login')
+    // if(path === '/login' || path === '/signUp'){
+    //   navigate('/')
+    // }
 
 }else{
   if(path === '/login'){

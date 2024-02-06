@@ -115,7 +115,7 @@ const data = await getDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'));
         });
 
 await updateDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'), {
-productId: productId++
+  productId: productId+1
 })
 
 
