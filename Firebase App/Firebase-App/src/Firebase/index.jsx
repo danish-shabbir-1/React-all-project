@@ -13,6 +13,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  getDoc,
+  updateDoc
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -92,9 +94,13 @@ export function signOutUser() {
 //////////// AddData User ///////////
 
 export async function AddItemDataBase(addItemIndataBase) {
-  const { Title, Description, Price, Image } = addItemIndataBase;
 
-  const storageRef = ref(storage, `Image/`);
+const data = await getDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'));
+
+  const { Title, Description, Price, Image } = addItemIndataBase;
+  const productId = data.data().productId;
+
+  const storageRef = ref(storage, `productImage/${productId}`);
   await uploadBytes(storageRef, Image).then((snapshot) => {
     console.log("Uploaded a blob or file!");
 
@@ -105,7 +111,14 @@ export async function AddItemDataBase(addItemIndataBase) {
           Description,
           Price,
           url,
+          productId
         });
+
+await updateDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'), {
+productId: productId++
+})
+
+
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.log("Error adding document: ", e.massage);
@@ -117,11 +130,11 @@ export async function AddItemDataBase(addItemIndataBase) {
 //////////// GetData User ///////////
 export async function getData() {
   const querySnapshot = await getDocs(collection(db, "AddData"));
-const product = []
+  const product = []
   querySnapshot.forEach((doc) => {
     product.push({
       ...doc.data(),
-      id : doc.id
+      id: doc.id
     })
     console.log(product);
   });
