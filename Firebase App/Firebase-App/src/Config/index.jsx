@@ -60,17 +60,17 @@ function ProtectRoutes() {
 
   console.log(path);
 
-  if (user) {
-    
-    // if(path === '/login' || path === '/signUp'){
-    //   navigate('/')
-    // }
+  if (!user) {
+    if (!user) {
+      navigate('/login')
+     }
+} else {
 
-}else{
-  if(path === '/login'){
+   if(path === '/login'){
     navigate('/')
   }
 }
+
 
 
 }

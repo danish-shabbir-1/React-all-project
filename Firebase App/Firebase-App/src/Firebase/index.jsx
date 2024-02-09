@@ -83,16 +83,16 @@ onAuthStateChanged(auth, (user) => {
 
 //////////// SignOut User ///////////
 
-export function signOutUser() {
-  signOut(auth)
-    .then(() => {
-      window.location(Login)
-      alert("user SignOut");
-    })
-    .catch((e) => {
-      alert(e.message);
-    });
-}
+    export function signOutUser() {
+      signOut(auth)
+        .then(() => {
+          // window.location.pathname = '/login'
+          alert("user SignOut");
+        })
+        .catch((e) => {
+          alert(e.message);
+        });
+    }
 
 //////////// AddData User ///////////
 

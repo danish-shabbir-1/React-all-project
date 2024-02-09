@@ -157,7 +157,7 @@ const [AddItem , setAddItem] = useState({
                 >
                   Close
                 </button>
-                <button type="button" className="btn btn-primary">
+                <button data-bs-dismiss="modal" type="button" className="btn btn-primary">
                   Save Changes
                 </button>
               </div>
