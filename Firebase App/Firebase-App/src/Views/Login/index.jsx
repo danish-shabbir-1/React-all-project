@@ -27,6 +27,7 @@ async function LoginInfo() {
       <input onChange={(e) => setLogin((prev) => ({...prev , passward : e.target.value}))} type="password" placeholder='Passward'/>
       <button onClick={LoginInfo}>Login</button>
       <p onClick={() => navigate('/signUp')}>SignUp</p>
+      <p onClick={() => navigate('/forgetPass')}>Forget Password</p>
     </div>
   )
 }

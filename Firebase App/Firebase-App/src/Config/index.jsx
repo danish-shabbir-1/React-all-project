@@ -5,6 +5,7 @@ import Login from "../Views/Login";
 import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
 import GetCardData from '../Components/GetCardData'
+import ResetPass from "../Components/ResetPass";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
     element :<div>
     <SignUp />
       <PtRoutes />
+    </div>
+  },
+  {
+    path : '/forgetPass',
+    element :<div>
+    <ResetPass />
     </div>
   }
 ]);

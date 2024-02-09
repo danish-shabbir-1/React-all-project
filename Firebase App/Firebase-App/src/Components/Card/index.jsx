@@ -1,11 +1,12 @@
 import React from "react";
+import './../../App.css'
 
 const Card = ({ product }) => {
   console.log("Card Products", product?.url);
 
   return (
-    <div class="card" style={{ width: 288 }} key={product?.id}>
-      <img src={product?.url} class="card-img-top" alt="..." />
+    <div class="displayCards card" key={product?.id}>
+      <img className="DC-image" src={product?.url} class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{product?.Title}</h5>
         <p class="card-text">{product?.Description}</p>

@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -17,6 +18,7 @@ import {
   updateDoc
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import Login from "../Views/Login";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -84,6 +86,7 @@ onAuthStateChanged(auth, (user) => {
 export function signOutUser() {
   signOut(auth)
     .then(() => {
+      window.location(Login)
       alert("user SignOut");
     })
     .catch((e) => {
@@ -128,6 +131,7 @@ await updateDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'), {
 }
 
 //////////// GetData User ///////////
+
 export async function getData() {
   const querySnapshot = await getDocs(collection(db, "AddData"));
   const product = []
@@ -142,3 +146,23 @@ export async function getData() {
 }
 
 getData()
+
+//////////// Forget Password /////////
+
+export async function forgetPass(resetPass) {
+
+  console.log('email' , resetPass);
+
+ await sendPasswordResetEmail(auth, resetPass)
+  .then(() => {
+    // Password reset email sent!
+    // ..
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+}
+
