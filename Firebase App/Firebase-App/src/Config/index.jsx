@@ -20,6 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/item/:id",
     element: <div>
+      <Navbar />
       <SelectedItem />
     </div>,
   },

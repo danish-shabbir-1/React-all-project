@@ -204,3 +204,51 @@ cursor: pointer;
 .displayCards .DC-image{
 border-radius: 7px;
 }
+
+.details-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.details-container .crausel-sig-item{
+    width: 50%;
+    margin: 80px 80px;
+}
+
+.details-container .user-detail-card{
+    width: 350px;
+    height: 300px;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    margin: 80px 0px;
+}
+.details-container .user-detail-card .topside{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.details-container .user-detail-card .card-body .leftside{
+    width: 40%;
+    height: 150px;
+    /* background-color: rgb(59, 10, 126); */
+}
+.details-container .user-detail-card .card-body .leftside .image{
+    width: 80px;
+    height: 80px;
+    border: 1px solid white;
+    border-radius: 100px;
+    margin: 20px auto;
+
+}
+.details-container .user-detail-card .card-body .rigthside{
+   width: 60%;
+   height: 150px;
+   /* background-color: aqua; */
+   line-height: 5px;
+   padding: 30px 0px;
+}
+.details-container .user-detail-card a{
+   width: 310px;
+   margin: 10px 2px;
+}
