@@ -15,7 +15,7 @@ import {
   addDoc,
   getDocs,
   getDoc,
-  updateDoc
+  updateDoc,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Login from "../Views/Login";
@@ -36,7 +36,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 const storage = getStorage(app);
-
 //////////// signUp User ///////////
 
 export async function Useer(userInfo) {
@@ -61,6 +60,7 @@ export function UserLogin(loginInfo) {
     .then((userCredential) => {
       const user = userCredential.user;
       alert("User Login");
+      window.location.pathname = "/";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -83,22 +83,21 @@ onAuthStateChanged(auth, (user) => {
 
 //////////// SignOut User ///////////
 
-    export function signOutUser() {
-      signOut(auth)
-        .then(() => {
-          // window.location.pathname = '/login'
-          alert("user SignOut");
-        })
-        .catch((e) => {
-          alert(e.message);
-        });
-    }
+export function signOutUser() {
+  signOut(auth)
+    .then(() => {
+      // window.location.pathname = '/login'
+      alert("user SignOut");
+    })
+    .catch((e) => {
+      alert(e.message);
+    });
+}
 
 //////////// AddData User ///////////
 
 export async function AddItemDataBase(addItemIndataBase) {
-
-const data = await getDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'));
+  const data = await getDoc(doc(db, "productId", "x9Y16CZVPKncsC8ggKhL"));
 
   const { Title, Description, Price, Image } = addItemIndataBase;
   const productId = data.data().productId;
@@ -114,13 +113,12 @@ const data = await getDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'));
           Description,
           Price,
           url,
-          productId
+          productId,
         });
 
-await updateDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'), {
-  productId: productId+1
-})
-
+        await updateDoc(doc(db, "productId", "x9Y16CZVPKncsC8ggKhL"), {
+          productId: productId + 1,
+        });
 
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
@@ -134,35 +132,46 @@ await updateDoc(doc(db, 'productId', 'x9Y16CZVPKncsC8ggKhL'), {
 
 export async function getData() {
   const querySnapshot = await getDocs(collection(db, "AddData"));
-  const product = []
+  const product = [];
   querySnapshot.forEach((doc) => {
     product.push({
       ...doc.data(),
-      id: doc.id
-    })
+      id: doc.id,
+    });
     console.log(product);
   });
-  return product
+  return product;
 }
 
-getData()
+getData();
 
 //////////// Forget Password /////////
 
 export async function forgetPass(resetPass) {
+  console.log("email", resetPass);
 
-  console.log('email' , resetPass);
-
- await sendPasswordResetEmail(auth, resetPass)
-  .then(() => {
-    // Password reset email sent!
-    // ..
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-
+  await sendPasswordResetEmail(auth, resetPass)
+    .then(() => {
+      // Password reset email sent!
+      // ..
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
 }
 
+////////// Get Single Product //////////////
+
+export async function GetSingleProduct() {
+  const docRef = doc(db, "AddData", "SF");
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}

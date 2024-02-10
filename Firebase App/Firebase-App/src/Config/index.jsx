@@ -49,28 +49,25 @@ function PtRoutes() {
 
   const navigate = useNavigate()
   
-  const path = window.location.pathname;
-  const [user, setUser] = useState(true)
+  const [user, setUser] = useState(false)
 
 useEffect(() =>{
   ProtectRoutes()
-},[window.location.pathname , user])
+},[window.location.pathname , user]);
 
 function ProtectRoutes() {
+  const path = window.location.pathname;
 
-  console.log(path);
+  console.log(user);
 
   if (user) {
-    if(path === '/login'){
-      navigate('/')
+    if(path == '/login'){
+      // navigate('/')
     }
 }
- else if (!user) {
-  navigate('/login')
- }
-
-
-
+ else {
+  // navigate('/login')
+ }      
 }
 return<></>
 
