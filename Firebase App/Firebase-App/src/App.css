@@ -199,6 +199,7 @@ color: rgb(178, 178, 178);
 padding: 5px 5px;
 width: 288px;
 height: auto;
+cursor: pointer;
 }
 .displayCards .DC-image{
 border-radius: 7px;

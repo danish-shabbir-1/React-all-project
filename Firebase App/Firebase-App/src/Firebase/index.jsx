@@ -36,11 +36,11 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 const storage = getStorage(app);
+let UserIdRes;
 //////////// signUp User ///////////
 
 export async function Useer(userInfo) {
   const { FirstName, LastName, email, passward } = userInfo;
-
   const { user } = await createUserWithEmailAndPassword(auth, email, passward);
   const userDocRef = doc(db, "UserInformation", user.uid);
   await setDoc(userDocRef, {
@@ -164,8 +164,11 @@ export async function forgetPass(resetPass) {
 
 ////////// Get Single Product //////////////
 
-export async function GetSingleProduct() {
-  const docRef = doc(db, "AddData", "SF");
+export async function GetSingleProduct(user) {
+
+console.log(user.user?.uid);
+
+  const docRef = doc(db, "AddData", user.uid);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {

@@ -1,11 +1,12 @@
 import React from "react";
 import './../../App.css'
+import { GetSingleProduct } from "../../Firebase";
 
 const Card = ({ product }) => {
   console.log("Card Products", product?.url);
 
   return (
-    <div class="displayCards card" key={product?.id}>
+    <div onClick={GetSingleProduct} class="displayCards card" key={product?.id}>
       <img className="DC-image" src={product?.url} class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{product?.Title}</h5>
