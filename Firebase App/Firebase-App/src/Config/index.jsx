@@ -22,6 +22,7 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar />
       <SelectedItem />
+      <GetCardData />
     </div>,
   },
   {
