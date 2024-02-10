@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./../../App.css";
 import { GetSingleProduct } from "../../Firebase";
+import PrfImage from  './../../prf-img.png'
 
 // 1. get product id
 // 2. get product data
@@ -87,7 +88,9 @@ function SelectedItem() {
         <div className="card-body">
           <div className="topside">
             <div className="leftside">
-              <div className="image"></div>
+              <div className="image">
+                <img src={PrfImage} alt="" />
+              </div>
             </div>
             <div className="rigthside">
               <h6>Uzair Khan</h6>
@@ -112,6 +115,7 @@ function SelectedItem() {
       <div className="user-detail-card user-detail-card2 user-detail-card3 card">
           <div className="card-body">
            <h3>Price ${product?.Price}</h3>
+           <h5>{product?.Title}</h5>
            <h5>{product?.Description}</h5>
           </div>
         </div>

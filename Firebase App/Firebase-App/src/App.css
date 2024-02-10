@@ -236,10 +236,14 @@ border-radius: 7px;
 .details-container .user-detail-card .card-body .leftside .image{
     width: 80px;
     height: 80px;
-    border: 1px solid rgb(177, 177, 177);
+    border: 2px solid rgb(177, 177, 177);
     border-radius: 100px;
     margin: 20px auto;
-
+}
+.details-container .user-detail-card .card-body .leftside .image img{
+    width: 84px;
+    height: 84px;
+    margin: -4px -4px;
 }
 .details-container .user-detail-card .card-body .rigthside{
    width: 60%;
