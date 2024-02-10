@@ -6,6 +6,7 @@ import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
 import GetCardData from '../Components/GetCardData'
 import ResetPass from "../Components/ResetPass";
+import SelectedItem from "../Views/SelectedItem";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,12 @@ const router = createBrowserRouter([
       <Navbar />
       <GetCardData />
       <PtRoutes />
+    </div>,
+  },
+  {
+    path: "/item/:id",
+    element: <div>
+      <SelectedItem />
     </div>,
   },
   {

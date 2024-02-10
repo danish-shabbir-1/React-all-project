@@ -1,12 +1,12 @@
 import React from "react";
 import './../../App.css'
-import { GetSingleProduct } from "../../Firebase";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ product }) => {
-  console.log("Card Products", product?.url);
+const navigate = useNavigate();
 
   return (
-    <div onClick={GetSingleProduct} class="displayCards card" key={product?.id}>
+    <div onClick={() => navigate(`/item/${product?.id}`)} class="displayCards card" key={product?.id}>
       <img className="DC-image" src={product?.url} class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{product?.Title}</h5>

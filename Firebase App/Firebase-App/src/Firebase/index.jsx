@@ -172,16 +172,15 @@ export async function forgetPass(resetPass) {
 
 ////////// Get Single Product //////////////
 
-export async function GetSingleProduct(userInfo) {
+export async function GetSingleProduct(productId) {
 
-  const { Id } = userInfo()
-  const docRef = doc(db, "AddData", user.uid);
+  const docRef = doc(db, "AddData", productId);
+
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
+    return docSnap.data()
   } else {
-    // docSnap.data() will be undefined in this case
-    console.log("No such document!");
+    return {};
   }
 }
