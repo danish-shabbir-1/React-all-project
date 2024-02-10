@@ -7,7 +7,8 @@ const UserSlice = createSlice({
       value: 0
     },
     reducers: {
-      userId: state => {
+      userId: (state , data) => {
+        state.name = data.payload;
       }
     }
   })

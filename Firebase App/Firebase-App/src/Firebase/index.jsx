@@ -18,6 +18,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {  useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
 // import UserSlice from "../Store/userslice";
 
@@ -41,15 +42,19 @@ const storage = getStorage(app);
 //////////// signUp User ///////////
 
 export async function Useer(userInfo) {
-  // const dispatch = useDispatch()
+
+  const useeeerId = useSelector((state) => state.user)
+
+console.log('useeeerId' , useeeerId);
+
   const { FirstName, LastName, email, passward } = userInfo;
   const { user } = await createUserWithEmailAndPassword(auth, email, passward);
   const userDocRef = doc(db, "UserInformation", user.uid);
-  // dispatch(UserSlice(user.uid))
   await setDoc(userDocRef, {
     FirstName,
     LastName,
     email,
+    userIdd : user.uid
   });
   alert("User Create Succesfull");
   return user.uid;
@@ -167,10 +172,9 @@ export async function forgetPass(resetPass) {
 
 ////////// Get Single Product //////////////
 
-export async function GetSingleProduct(user) {
+export async function GetSingleProduct(userInfo) {
 
-console.log(user.user?.uid);
-
+  const { Id } = userInfo()
   const docRef = doc(db, "AddData", user.uid);
   const docSnap = await getDoc(docRef);
 

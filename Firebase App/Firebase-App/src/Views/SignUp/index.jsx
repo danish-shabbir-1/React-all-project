@@ -34,7 +34,7 @@ const SignUp = () => {
     console.log(Signup);
     try {
       const userInfo = await Useer(Signup)
-      dispatch(UserSlice('id',user.uid))
+      dispatch(UserSlice(userInfo))
       navigate('/login')
     } catch (error) {
       setErrMas(error.massage)
