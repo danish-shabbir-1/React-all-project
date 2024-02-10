@@ -18,7 +18,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import Login from "../Views/Login";
+// import { useDispatch } from "react-redux";
+// import UserSlice from "../Store/userslice";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
@@ -30,26 +31,28 @@ const firebaseConfig = {
   measurementId: "G-3Y36SQ4RR4",
 };
 
-// Get a non-default Storage bucket
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 const storage = getStorage(app);
-let UserIdRes;
+
 //////////// signUp User ///////////
 
 export async function Useer(userInfo) {
+  // const dispatch = useDispatch()
   const { FirstName, LastName, email, passward } = userInfo;
   const { user } = await createUserWithEmailAndPassword(auth, email, passward);
   const userDocRef = doc(db, "UserInformation", user.uid);
+  // dispatch(UserSlice(user.uid))
   await setDoc(userDocRef, {
     FirstName,
     LastName,
     email,
   });
   alert("User Create Succesfull");
-  return userDocRef;
+  return user.uid;
 }
 
 //////////// signIn User ///////////

@@ -3,6 +3,8 @@ import { useState } from "react";
 import "./../../App.css";
 import { useNavigate } from "react-router-dom";
 import { Useer } from "../../Firebase";
+import { useDispatch } from "react-redux";
+import UserSlice from "../../Store/userslice";
 
 const SignUp = () => {
   const [Signup, setSignup] = useState({
@@ -11,6 +13,9 @@ const SignUp = () => {
     email: "",
     passward: "",
   });
+
+  const dispatch = useDispatch()
+
   const [errMas, setErrMas] = useState("");
 
   const navigate = useNavigate();
@@ -29,7 +34,7 @@ const SignUp = () => {
     console.log(Signup);
     try {
       const userInfo = await Useer(Signup)
-      console.log(userInfo);
+      dispatch(UserSlice('id',user.uid))
       navigate('/login')
     } catch (error) {
       setErrMas(error.massage)
