@@ -119,7 +119,6 @@ function SelectedItem() {
            <h5>{product?.Description}</h5>
           </div>
         </div>
-        <h1>Related Adds</h1>
     </div>
   );
 }

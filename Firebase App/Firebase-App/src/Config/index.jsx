@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import GetCardData from '../Components/GetCardData'
 import ResetPass from "../Components/ResetPass";
 import SelectedItem from "../Views/SelectedItem";
+import Addtocart from "../Components/AddToCart/Addtocart";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,13 @@ const router = createBrowserRouter([
       <Navbar />
       <SelectedItem />
       <GetCardData />
+    </div>,
+  },
+  {
+    path: "/cart",
+    element: <div>
+      <Navbar />
+      <Addtocart />
     </div>,
   },
   {

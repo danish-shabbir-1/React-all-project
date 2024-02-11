@@ -15,4 +15,4 @@ const UserSlice = createSlice({
 
   export const { userId } = UserSlice.actions
 
-  export default UserSlice;
+  export default UserSlice
