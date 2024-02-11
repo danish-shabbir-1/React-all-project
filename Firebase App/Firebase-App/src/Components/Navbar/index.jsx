@@ -3,7 +3,7 @@ import "./../../App.css";
 import { signOutUser } from "../../Firebase";
 import { useState } from "react";
 import { AddItemDataBase } from "../../Firebase";
-
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,6 +15,8 @@ const [AddItem , setAddItem] = useState({
   Price : '',
   Image : ''
 })
+
+const navigate = useNavigate()
 
 // console.log(AddItem);
   function popUp() {
@@ -78,7 +80,7 @@ const [AddItem , setAddItem] = useState({
               >
                 Sell
               </button>
-              <i className="fa-solid fa-cart-shopping"></i>
+              <i onClick={() => navigate('/cart')} className="fa-solid fa-cart-shopping"></i>
               <i
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"
