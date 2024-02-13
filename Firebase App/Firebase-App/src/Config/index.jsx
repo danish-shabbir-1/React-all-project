@@ -8,6 +8,7 @@ import GetCardData from '../Components/GetCardData'
 import ResetPass from "../Components/ResetPass";
 import SelectedItem from "../Views/SelectedItem";
 import Addtocart from "../Components/AddToCart/Addtocart";
+import MapIntegrate from "../Components/Map";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       <Navbar />
       <GetCardData />
       <PtRoutes />
+      <MapIntegrate />
     </div>,
   },
   {
