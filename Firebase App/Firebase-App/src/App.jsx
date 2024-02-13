@@ -1,7 +1,7 @@
 import "./App.css";
 import { Provider } from "react-redux";
 import Router from "./Config/index";
-import DraggableMarker from "./Components/Map";
+import MapIntegrate from "./Components/Map";
 import store from "./store";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <Provider store={store}>
       <>
         {/* <Router /> */}
-        <DraggableMarker />
+        <MapIntegrate />
       </>
     </Provider>
   );
