@@ -17,7 +17,6 @@ const router = createBrowserRouter([
       <Navbar />
       <GetCardData />
       <PtRoutes />
-      <MapIntegrate />
     </div>,
   },
   {
@@ -26,6 +25,7 @@ const router = createBrowserRouter([
       <Navbar />
       <SelectedItem />
       <GetCardData />
+      <MapIntegrate />
     </div>,
   },
   {
