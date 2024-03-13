@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(31, 31, 31);
+}
+.SignUp {
+  border: 2px solid rgb(62, 62, 62);
+  padding: 30px 20px;
+  border-radius: 7px;
+  text-align: center;
+  margin: 0px 650px;
+  width: 300px;
+}
+.SignUp h5 {
+  font-size: 20px;
+}
+.SignUp p {
+  cursor: pointer;
+}
+.SignUp input {
+  display: block;
+  margin: 10px auto;
+  border: 1px solid rgb(45, 45, 178);
+  background: transparent;
+  width: 280px;
+  height: 30px;
+  padding: 0px 10px;
+  color: rgb(194, 194, 194);
+  border-radius: 5px;
+}
+.SignUp input:hover {
+  border-color: rgb(45, 45, 178);
+}

@@ -23,13 +23,13 @@ import {  useSelector } from "react-redux";
 // import UserSlice from "../Store/userslice";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDJObtNHxmzfIczH17_AJluLCPA9vZu-Hk",
-  authDomain: "ds-store-d7a58.firebaseapp.com",
-  projectId: "ds-store-d7a58",
-  storageBucket: "ds-store-d7a58.appspot.com",
-  messagingSenderId: "590572980909",
-  appId: "1:590572980909:web:383169b9da3e246ce0d424",
-  measurementId: "G-3Y36SQ4RR4",
+  apiKey: "AIzaSyAVDjIcVbfz2ielf8MtOdI268LilJh1aJc",
+  authDomain: "olx-replica-ccdea.firebaseapp.com",
+  projectId: "olx-replica-ccdea",
+  storageBucket: "olx-replica-ccdea.appspot.com",
+  messagingSenderId: "911980983982",
+  appId: "1:911980983982:web:a7864ce918badeb1c25f3f",
+  measurementId: "G-8FK1JQVSBK"
 };
 
 // Initialize Firebase
