@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from 'bcryptjs'
+import  jwt  from "jsonwebtoken";
+import jwtSecret from "../config/jwt.mjs";
+
 
 const { Schema } = mongoose
 
@@ -21,6 +24,10 @@ const userSchema = new Schema ({
         type : String,
         required : true,
         minLength : 6
+    },
+    tokens: {
+        default: [],
+        type: []
     }
 })
 
@@ -36,6 +43,14 @@ userSchema.pre('save' , function (next) {
 userSchema.methods.comparepassword = function (password) {
     const user = this
     return bcrypt.compareSync(password, user.password); // true
+}
+
+userSchema.methods.genrateToken = function () {
+    
+    const { _id } = this
+    
+    const token = jwt.sign({ _id }, jwtSecret);
+    return token
 }
 
 const Users = mongoose.model('userInfo' , userSchema)

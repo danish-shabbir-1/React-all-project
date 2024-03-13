@@ -1,6 +1,7 @@
 import express from "express";
 import Users from "../model/User.mjs";
 
+
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -41,9 +42,13 @@ router.post("/login", async (req, res) => {
             return
         }
 
-        // Step 1 : genrate a token
+        // Step 3 : genrate a token
+
+        const token = user.genrateToken()
+        user.tokens.push(token)
+        await user.save()
         
-        res.send({ massage: "User Login Succesfully" });
+        res.send({ message: 'User logged in successfully!', token })
     } catch (e) {
         res.send({ massage: e.massage });
     }
