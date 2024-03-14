@@ -33,16 +33,19 @@ const userSchema = new Schema ({
 
 userSchema.pre('save' , function (next) {
     const user =  this
-    var salt = bcrypt.genSaltSync(10);
-    var hash = bcrypt.hashSync(user.password, salt);
+    if (user.isModified('password')) {
+        var salt = bcrypt.genSaltSync(10);
+        var hash = bcrypt.hashSync(user.password, salt);
+    
+        user.password = hash
+    }
 
-    user.password = hash
     next()
 })
 
 userSchema.methods.comparepassword = function (password) {
     const user = this
-    return bcrypt.compareSync(password, user.password); // true
+    return bcrypt.compareSync(password, user.password); 
 }
 
 userSchema.methods.genrateToken = function () {
