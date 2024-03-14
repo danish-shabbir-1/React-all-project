@@ -1,6 +1,6 @@
 import express from "express";
 import Users from "../model/User.mjs";
-
+import verifyToken from "../middlewares/verifyToken.mjs";
 
 const router = express.Router();
 
@@ -53,5 +53,11 @@ router.post("/login", async (req, res) => {
         res.send({ massage: e.massage });
     }
 });
+
+router.put('/logout' , verifyToken , async (req , res) => {
+   await Users.findByIdAndUpdate(req.userId , { $pull : {tokens : req.tokenToRemove}})
+   res.send({ message: 'Logged out successfully!' })
+})
+
 
 export default router;
