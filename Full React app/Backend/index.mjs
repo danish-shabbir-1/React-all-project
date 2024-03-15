@@ -9,7 +9,7 @@ const app = express()
 db.connection.once('open', () => console.log("connected to db")).on("error", (err) => console.log("error connecting db -->", err))
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'http://localhost:5174'
   }));
 
 

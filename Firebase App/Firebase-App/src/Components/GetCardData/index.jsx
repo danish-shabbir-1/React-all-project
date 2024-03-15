@@ -1,36 +1,35 @@
-import React from 'react'
-import { useState , useEffect } from 'react'
-import { getData } from '../../Firebase'
-import Card from '../Card'
-import './../../App.css'
+// import React from 'react'
+// import { useState , useEffect } from 'react'
+// import Card from '../Card'
+// import './../../App.css'
 
-const GetCardData = () => {
+// const GetCardData = () => {
 
-    const [product , setProduct] = useState()
+//     const [product , setProduct] = useState()
 
-    useEffect(() => {
-        GettAllData()
-    }, [])
+//     useEffect(() => {
+//         GettAllData()
+//     }, [])
 
-    async function GettAllData() {
-        const res = await getData()
-        setProduct(res)
+//     async function GettAllData() {
+//         const res = await getData()
+//         setProduct(res)
 
-    }
+//     }
 
-    if(!product?.length) {
-        return <div>Loading....</div>
-    }
+//     if(!product?.length) {
+//         return <div>Loading....</div>
+//     }
 
-    console.log('new product',product);
+//     console.log('new product',product);
 
-  return (
-    <div className='AddsCards'>
-      {product.map((item) => {
-        return <Card product={item} />
-      })}
-    </div>
-  )
-}
+//   return (
+//     <div className='AddsCards'>
+//       {product.map((item) => {
+//         return <Card product={item} />
+//       })}
+//     </div>
+//   )
+// }
 
-export default GetCardData
+// export default GetCardData

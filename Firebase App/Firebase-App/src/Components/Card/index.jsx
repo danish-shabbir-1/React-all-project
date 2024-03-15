@@ -5,6 +5,12 @@ import { useNavigate } from "react-router-dom";
 const Card = ({ product }) => {
 const navigate = useNavigate();
 
+export function getAllDataFromDb() {
+  fetch('http://localhost:3001/ads')
+      .then(res => res.json())
+      .then(res => console.log(res))
+}
+
   return (
     <div onClick={() => navigate(`/item/${product?.id}`)} class="displayCards card" key={product?.id}>
       <img className="DC-image" src={product?.url} class="card-img-top" alt="..." />

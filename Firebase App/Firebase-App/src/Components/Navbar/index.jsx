@@ -1,24 +1,20 @@
 import React from "react";
 import "./../../App.css";
-import { signOutUser } from "../../Firebase";
 import { useState } from "react";
-import { AddItemDataBase } from "../../Firebase";
 import { useNavigate } from "react-router-dom";
-
-
+import getAllDataFromDb from './../../Components/Navbar'
 
 const Navbar = () => {
+  const [AddItem, setAddItem] = useState({
+    Title: "",
+    Description: "",
+    Price: "",
+    Image: [],
+  });
 
-const [AddItem , setAddItem] = useState({
-  Title : '',
-  Description : '',
-  Price : '',
-  Image : []
-})
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
-
-// console.log(AddItem);
+  // console.log(AddItem);
   function popUp() {
     const myModal = document.getElementById("myModal");
     const myInput = document.getElementById("myInput");
@@ -37,10 +33,23 @@ const navigate = useNavigate()
     });
   }
 
-  async function addDaata() {
-    const addItemIndataBase = await AddItemDataBase(AddItem)
+  function addDataInDb() {
+    fetch("http://localhost:3001/ads/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Title: AddItem.Title,
+        Description: AddItem.Description,
+        Amount: AddItem.Price,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   }
 
+  // getAllDataFromDb()
 
   return (
     <div>
@@ -76,11 +85,14 @@ const navigate = useNavigate()
                 className="sell-Btn search-Btn"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                onClick={popUp }
+                onClick={popUp}
               >
                 Sell
               </button>
-              <i onClick={() => navigate('/cart')} className="fa-solid fa-cart-shopping"></i>
+              <i
+                onClick={() => navigate("/cart")}
+                className="fa-solid fa-cart-shopping"
+              ></i>
               <i
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"
@@ -105,10 +117,38 @@ const navigate = useNavigate()
           <div className="modal-content">
             <div className="modal-body modal-body">
               <h2>DS STORE</h2>
-              <input onChange={(e) => setAddItem((prev) => ({ ...prev, Title : e.target.value}))} type="text" placeholder="Title" />
-              <input onChange={(e) => setAddItem((prev) => ({ ...prev, Description : e.target.value}))} type="text" placeholder="Description" />
-              <input onChange={(e) => setAddItem((prev) => ({ ...prev, Price : e.target.value}))} type="number" placeholder="Price" />
-              <input onChange={(e) => setAddItem((prev) => ({ ...prev, Image : e.target.files[0]}))} type="file" multiple placeholder="Add Image" />
+              <input
+                onChange={(e) =>
+                  setAddItem((prev) => ({ ...prev, Title: e.target.value }))
+                }
+                type="text"
+                placeholder="Title"
+              />
+              <input
+                onChange={(e) =>
+                  setAddItem((prev) => ({
+                    ...prev,
+                    Description: e.target.value,
+                  }))
+                }
+                type="text"
+                placeholder="Description"
+              />
+              <input
+                onChange={(e) =>
+                  setAddItem((prev) => ({ ...prev, Price: e.target.value }))
+                }
+                type="number"
+                placeholder="Price"
+              />
+              <input
+                onChange={(e) =>
+                  setAddItem((prev) => ({ ...prev, Image: e.target.files[0] }))
+                }
+                type="file"
+                multiple
+                placeholder="Add Image"
+              />
               <button
                 type="button"
                 className="btn btn-secondary"
@@ -116,7 +156,12 @@ const navigate = useNavigate()
               >
                 Close
               </button>
-              <button data-bs-dismiss="modal" onClick={addDaata} type="button" className="close-btn btn btn-primary">
+              <button
+                data-bs-dismiss="modal"
+                onClick={addDataInDb}
+                type="button"
+                className="close-btn btn btn-primary"
+              >
                 Publish
               </button>
             </div>
@@ -149,7 +194,7 @@ const navigate = useNavigate()
                 <input type="text" placeholder="First Name" />
                 <input type="text" placeholder="Last Name" />
                 <input type="email" placeholder="email" />
-                <button onClick={signOutUser}> SignOut</button>
+                <button> SignOut</button>
               </div>
               <div className="prf-controls">
                 <button
@@ -159,7 +204,11 @@ const navigate = useNavigate()
                 >
                   Close
                 </button>
-                <button data-bs-dismiss="modal" type="button" className="btn btn-primary">
+                <button
+                  data-bs-dismiss="modal"
+                  type="button"
+                  className="btn btn-primary"
+                >
                   Save Changes
                 </button>
               </div>

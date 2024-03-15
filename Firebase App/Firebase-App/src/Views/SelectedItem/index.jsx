@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./../../App.css";
-import { GetSingleProduct } from "../../Firebase";
 import PrfImage from  './../../prf-img.png'
 
 // 1. get product id

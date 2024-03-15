@@ -4,8 +4,6 @@ import Navbar from "../Components/Navbar";
 import Login from "../Views/Login";
 import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
-import GetCardData from '../Components/GetCardData'
-import ResetPass from "../Components/ResetPass";
 import SelectedItem from "../Views/SelectedItem";
 import Addtocart from "../Components/AddToCart/Addtocart";
 import MapIntegrate from "../Components/Map";
@@ -15,7 +13,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <div>
       <Navbar />
-      <GetCardData />
       <PtRoutes />
     </div>,
   },
@@ -24,7 +21,6 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar />
       <SelectedItem />
-      <GetCardData />
       <MapIntegrate />
     </div>,
   },
@@ -56,12 +52,6 @@ const router = createBrowserRouter([
       <PtRoutes />
     </div>
   },
-  {
-    path : '/forgetPass',
-    element :<div>
-    <ResetPass />
-    </div>
-  }
 ]);
 
 function PtRoutes() {
