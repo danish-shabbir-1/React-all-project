@@ -4,22 +4,22 @@ const { Schema } = mongoose;
 
 
 const AddsSchems = new Schema({
-    title: {
+    Title: {
         type: String,
         required: true
     },
-    description: {
+    Description: {
         type: String,
         required: true
     },
-    amount: {
+    Amount: {
         type: Number,
         required: true
     },
-    userId: {
-        type: String,
-        required: true
-    }
+    // userId: {
+    //     type: String,
+    //     required: true
+    // }
 })
 
 const Ads = mongoose.model('adds', AddsSchems);

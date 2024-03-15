@@ -16,7 +16,7 @@ router.get('/' , async (req, res) => {
 router.post('/post', async (req, res) => {
     try {
        const postData = await Ads.create(req.body)
-        res.send({ massage : 'Product fetch succesfully'})
+        res.send({ massage : 'Product added succesfully'})
     } catch (e) {
         res.send({ massage : e.massage})   
     }
