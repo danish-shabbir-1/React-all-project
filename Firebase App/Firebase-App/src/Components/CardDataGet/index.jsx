@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DisplayCardData from '../DisplayCardData/index';
+import '../../App.css'
 
 const CardDataGet = () => {
   const [Data, setData] = useState([]);
@@ -18,12 +19,12 @@ const CardDataGet = () => {
   console.log('db data', Data);
 
   if (!Data?.length) {
-    return <div>Loading....</div>
+    return <div >Loading....</div>
   }
 
 
   return (
-    <div>
+    <div className="main-class">
       {Data.map((item) => {
         return <DisplayCardData product={item} />
       })}
