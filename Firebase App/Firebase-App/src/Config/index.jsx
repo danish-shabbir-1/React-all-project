@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import SelectedItem from "../Views/SelectedItem";
 import MapIntegrate from "../Components/Map";
 import CardDataGet from "../Components/CardDataGet";
-import DisplayCardData from "../Components/DisplayCardData";
+import '../App.css'
 
 const router = createBrowserRouter([
   {
@@ -15,8 +15,7 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar />
       <PtRoutes />
-      <CardDataGet />
-      <DisplayCardData />
+      <CardDataGet className="main-class"/>
     </div>,
   },
   {
