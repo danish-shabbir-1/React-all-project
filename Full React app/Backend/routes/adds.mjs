@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/' , async (req, res) => {
     try {
         const getData = await Ads.find()
-        res.send({ massage : 'Product fetch succesfully', getData})
+        res.send({ massage : 'Product fetch succesfully', Data : getData})
     } catch (e) {
         res.send({ massage : e.massage})
     }
