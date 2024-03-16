@@ -2,7 +2,6 @@ import React from "react";
 import "./../../App.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import getAllDataFromDb from './../../Components/Navbar'
 
 const Navbar = () => {
   const [AddItem, setAddItem] = useState({
@@ -19,7 +18,7 @@ const Navbar = () => {
     const myModal = document.getElementById("myModal");
     const myInput = document.getElementById("myInput");
 
-    myModal.addEventListener("shown.bs.modal", () => {
+    myModal?.addEventListener("shown.bs.modal", () => {
       myInput.focus();
     });
   }
@@ -28,7 +27,7 @@ const Navbar = () => {
     const myModal = document.getElementById("myModal");
     const myInput = document.getElementById("myInput");
 
-    myModal.addEventListener("shown.bs.modal", () => {
+    myModal?.addEventListener("shown.bs.modal", () => {
       myInput.focus();
     });
   }
@@ -48,8 +47,6 @@ const Navbar = () => {
       .then((res) => res.json())
       .then((res) => console.log(res));
   }
-
-  // getAllDataFromDb()
 
   return (
     <div>
