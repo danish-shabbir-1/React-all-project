@@ -5,8 +5,9 @@ import Login from "../Views/Login";
 import SignUp from "../Views/SignUp";
 import { useEffect, useState } from "react";
 import SelectedItem from "../Views/SelectedItem";
-import Addtocart from "../Components/AddToCart/Addtocart";
 import MapIntegrate from "../Components/Map";
+import CardDataGet from "../Components/CardDataGet";
+import DisplayCardData from "../Components/DisplayCardData";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,8 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar />
       <PtRoutes />
+      <CardDataGet />
+      <DisplayCardData />
     </div>,
   },
   {
@@ -28,7 +31,6 @@ const router = createBrowserRouter([
     path: "/cart",
     element: <div>
       <Navbar />
-      <Addtocart />
     </div>,
   },
   {
