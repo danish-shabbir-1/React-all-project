@@ -282,3 +282,18 @@ border-radius: 7px;
     height: auto;
     width: 850px;
 }
+
+.main-class{
+display: flex;
+flex-wrap: wrap;
+margin: 100px 50px;
+justify-content: space-between;
+}
+
+.getcardData{
+width: 300px;
+background: transparent;
+color: rgb(174, 174, 174);
+border: 1px solid rgb(24, 24, 202);
+margin: 30px 0px;
+}
