@@ -11,6 +11,8 @@ const Navbar = () => {
     Image: [],
   });
 
+  console.log(AddItem.Image);
+
   const navigate = useNavigate();
 
   // console.log(AddItem);
@@ -42,6 +44,7 @@ const Navbar = () => {
         Title: AddItem.Title,
         Description: AddItem.Description,
         Amount: AddItem.Price,
+        Image: AddItem?.Image
       }),
     })
       .then((res) => res.json())
@@ -114,53 +117,55 @@ const Navbar = () => {
           <div className="modal-content">
             <div className="modal-body modal-body">
               <h2>DS STORE</h2>
-              <input
-                onChange={(e) =>
-                  setAddItem((prev) => ({ ...prev, Title: e.target.value }))
-                }
-                type="text"
-                placeholder="Title"
-              />
-              <input
-                onChange={(e) =>
-                  setAddItem((prev) => ({
-                    ...prev,
-                    Description: e.target.value,
-                  }))
-                }
-                type="text"
-                placeholder="Description"
-              />
-              <input
-                onChange={(e) =>
-                  setAddItem((prev) => ({ ...prev, Price: e.target.value }))
-                }
-                type="number"
-                placeholder="Price"
-              />
-              <input
-                onChange={(e) =>
-                  setAddItem((prev) => ({ ...prev, Image: e.target.files[0] }))
-                }
-                type="file"
-                multiple
-                placeholder="Add Image"
-              />
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                data-bs-dismiss="modal"
-                onClick={addDataInDb}
-                type="button"
-                className="close-btn btn btn-primary"
-              >
-                Publish
-              </button>
+              <form action="/ads/post" name="Image" enctype="multipart/form-data" method="post">
+                <input
+                  onChange={(e) =>
+                    setAddItem((prev) => ({ ...prev, Title: e.target.value }))
+                  }
+                  type="text"
+                  placeholder="Title"
+                />
+                <input
+                  onChange={(e) =>
+                    setAddItem((prev) => ({
+                      ...prev,
+                      Description: e.target.value,
+                    }))
+                  }
+                  type="text"
+                  placeholder="Description"
+                />
+                <input
+                  onChange={(e) =>
+                    setAddItem((prev) => ({ ...prev, Price: e.target.value }))
+                  }
+                  type="number"
+                  placeholder="Price"
+                />
+                <input
+                  onChange={(e) =>
+                    setAddItem((prev) => ({ ...prev, Image: e.target.files[0] }))
+                  }
+                  type="file"
+                  multiple
+                  placeholder="Add Image"
+                />
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  data-bs-dismiss="modal"
+                  onClick={addDataInDb}
+                  type="button"
+                  className="close-btn btn btn-primary"
+                >
+                  Publish
+                </button>
+              </form>
             </div>
           </div>
         </div>
