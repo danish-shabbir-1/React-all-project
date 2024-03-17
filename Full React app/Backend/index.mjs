@@ -2,7 +2,7 @@ import express from "express";
 import db from './config/db.mjs'
 import routes from './routes/index.mjs'
 import cors from 'cors'
-
+import fileUpload from "express-fileupload";
 
 const app = express()
 
@@ -22,5 +22,9 @@ app.listen(3001 , function () {
 })
 
 app.use(express.json())
+
+app.use(fileUpload({
+  useTempFiles : true
+}))
 
 app.use('/' , routes)

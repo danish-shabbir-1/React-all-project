@@ -16,6 +16,10 @@ const AddsSchems = new Schema({
         type: Number,
         required: true
     },
+    Image : {
+     data : Buffer,
+     contentType : String
+    }
     // userId: {
     //     type: String,
     //     required: true
