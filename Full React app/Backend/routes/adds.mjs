@@ -13,12 +13,23 @@ router.get('/' , async (req, res) => {
 
 })
 
-router.post('/post', async (req, res) => {
+// const Storage = multer.diskStorage({
+//     destination : 'upload',
+//     filename : (req, file, cb) => {
+//         cb(null, file.originalname)
+//     }
+// })
+
+// const upload = multer({
+//     storage : Storage
+// }).single('testImage')
+
+router.post('/post',async (req, res) => {
     try {
        const postData = await Ads.create(req.body)
-        res.send({ massage : 'Product added succesfully'})
+       res.send({ message: 'Product added successfully'});
     } catch (e) {
-        res.send({ massage : e.massage})   
+        res.status(500).send({ message: e.message }); 
     }
 })
 
