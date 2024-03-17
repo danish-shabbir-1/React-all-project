@@ -13,17 +13,6 @@ router.get('/' , async (req, res) => {
 
 })
 
-// const Storage = multer.diskStorage({
-//     destination : 'upload',
-//     filename : (req, file, cb) => {
-//         cb(null, file.originalname)
-//     }
-// })
-
-// const upload = multer({
-//     storage : Storage
-// }).single('testImage')
-
 router.post('/post',async (req, res) => {
     try {
        const postData = await Ads.create(req.body)

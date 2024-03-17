@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar />
       <PtRoutes />
-      <CardDataGet className="main-class"/>
+      <CardDataGet/>
     </div>,
   },
   {
