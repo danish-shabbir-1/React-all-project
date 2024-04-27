@@ -2,13 +2,13 @@ import express from "express";
 import db from './config/db.mjs'
 import routes from './routes/index.mjs'
 import cors from 'cors'
-import fileUpload from "express-fileupload";
+// import fileUpload from "express-fileupload";
 
 const app = express()
 
 db.connection.once('open', () => console.log("connected to db")).on("error", (err) => console.log("error connecting db -->", err))
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'https://chat.openai.com' }));
 
 
   app.use(function(req, res, next) {
