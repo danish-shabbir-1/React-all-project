@@ -1,13 +1,11 @@
 import React from 'react'
-import Login from './Components/login'
-import Signup from './Components/signup'
+import Router from './config/router'
 
 const App = () => {
   return (
-    <div>
-      <Login />
-      <Signup />
-    </div>
+    <>
+      <Router />
+    </>
   )
 }
 
