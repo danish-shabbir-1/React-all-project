@@ -5,7 +5,11 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
+
   body{
+    background-color : #252525;
+  }
+  .bodywrapper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,6 +104,7 @@
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    cursor: pointer;
   }
   .register-link p a:hover{
     text-decoration: underline;
