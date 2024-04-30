@@ -9,6 +9,11 @@
   body{
     background-color : #252525;
   }
+
+  nav{
+    background-color : #000000;
+  }
+
   .bodywrapper{
     display: flex;
     justify-content: center;
@@ -109,3 +114,246 @@
   .register-link p a:hover{
     text-decoration: underline;
   }
+
+  /* /// */
+
+  .Search {
+    width: 800px !important;
+    margin: auto 250px;
+    background: transparent!important;
+    border-color: rgb(87, 83, 83);
+    color: white!important;
+}
+
+.Search::placeholder {
+    color: white!important;
+}
+
+.search-Btn{
+width: 100px;
+background: transparent!important;
+color: white!important;
+border: 1px solid rgb(87, 83, 83);
+border-radius: 4px;
+}
+
+i{
+    font-size: 25px;
+    padding-left: 50px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+.sell-Btn{
+    margin-left: 100px!important;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 3px solid rgb(18, 63, 185);
+}   
+
+.Signup-container .err{
+    color: rgb(150, 18, 18);
+    font-size: 14px;
+    text-align: center;
+}
+
+.modal{
+    color: black;
+    text-align: center!important;
+}
+
+.modal-body input{
+    display: block;
+    margin: 15px auto;
+    border-color: rgb(87, 83, 83);
+    background: transparent;
+    border: 1px solid;
+    padding: 15px 10px;
+    color: rgb(148, 148, 148);
+    border-radius: 5px;
+    width: 280px;
+    height: 18px;
+}
+
+
+.modal-body{
+    background-color: rgb(20, 20, 20);
+    color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(44, 44, 44);
+}
+.modal-body button{
+width: 100px;
+text-align: center;
+}
+
+.close-btn{
+    margin-left: 30px;
+}
+
+/* /////////// profile logout modal ////////// */
+i{
+  color: white;
+}
+.prf-modal{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prf-modal .left-side{
+    height: 300px;
+    width: 40%;
+    /* background-color: blueviolet; */
+}
+
+.prf-modal .rigth-side{
+    height: 300px;
+    width: 60%;
+    /* background-color: rgb(4, 84, 74); */
+}
+.prf-modal .rigth-side input{
+margin: 20px auto;
+width: 250px;
+}
+.prf-modal .rigth-side button{
+width: auto;
+height: auto;
+background-color: rgba(33, 36, 207, 0.86);
+color: white;
+border: 1px solid rgba(33, 36, 207, 0.86);
+padding: 5px 10px;
+border-radius: 7px;
+margin-left: 160px;
+}
+
+.prf-modal .prf-controls{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.prf-modal .prf-controls button{
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.prf-modal .prf-controls .modif-btn{
+    margin-left: 230px;
+}
+.prf-modal .left-side .prf-image{
+    height: 120px;
+    width: 120px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 20px 30px;
+}
+.prf-modal .left-side h1{
+text-align: center;
+font-size: 25px;
+margin-top: -10px;
+}
+
+.AddsCards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 20px;
+}
+
+.displayCards{
+margin: 40px 20px;
+background-color: rgb(35, 34, 34);
+color: rgb(178, 178, 178);
+padding: 5px 5px;
+width: 358px;
+height: 400px;
+cursor: pointer;
+line-height: 20px;
+}
+
+.displayCards .bottom-side{
+line-height: 10px;
+padding: 10px 0px;
+}
+.displayCards a{
+padding: 5px 10px;
+margin-top: -10px;
+}
+
+.displayCards .DC-image{
+border-radius: 7px;
+}
+
+.details-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.details-container .crausel-sig-item{
+    width: 50%;
+    margin: 80px 80px;
+}
+
+.details-container .user-detail-card{
+    width: 350px;
+    height: 300px;
+    background-color: rgb(41, 40, 40);
+    color: white;
+    margin: 80px 0px;
+}
+.details-container .user-detail-card .topside{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 10px;
+}
+.details-container .user-detail-card .card-body .leftside{
+    width: 40%;
+    height: 150px;
+    /* background-color: rgb(59, 10, 126); */
+}
+.details-container .user-detail-card .card-body .leftside .image{
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgb(177, 177, 177);
+    border-radius: 100px;
+    margin: 20px auto;
+}
+.details-container .user-detail-card .card-body .leftside .image img{
+    width: 84px;
+    height: 84px;
+    margin: -4px -4px;
+}
+.details-container .user-detail-card .card-body .rigthside{
+   width: 60%;
+   height: 150px;
+   /* background-color: aqua; */
+   line-height: 5px;
+   padding: 30px 0px;
+}
+.details-container .user-detail-card a{
+   width: 310px;
+   margin: 10px 2px;
+}
+.details-container .user-detail-card2{
+   margin: 30px 0px;
+   border: 1px solid rgb(177, 177, 177);
+   background-color: rgb(41, 40, 40);
+   border-radius: 10px;
+}
+.details-container .user-detail-card2 .card-body span{
+   padding-left: 10px;
+}
+
+.details-container .user-detail-card3{
+    margin: -40px 80px;
+    height: auto;
+    width: 850px;
+}
+
+.main-class{
+display: flex;
+flex-wrap: wrap;
+margin: 100px 50px;
+justify-content: space-between;
+}
