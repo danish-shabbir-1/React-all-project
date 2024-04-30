@@ -12,7 +12,7 @@ const Login = () => {
 
   function userLogin(event) {
     event.preventDefault(); // Prevent the default form submission behavior
-
+  
     fetch('http://localhost:3001/users/login', {
       method: 'PUT',
       headers: {
@@ -24,9 +24,13 @@ const Login = () => {
       })
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(data => {
+      localStorage.setItem('token', data.token); // Set the token in localStorage
+      console.log('token:', data.token); // Log the token
+    })
     .catch(error => console.error('Error:', error));
   }
+  
 
 
   return (
